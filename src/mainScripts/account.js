@@ -1,4 +1,4 @@
-import { getInfoAccount, updateAccount, deteleAccount } from "../services/api.js";
+import { getInfoAccount } from "../services/api.js";
 const data = await getInfoAccount();
 
 let cardsContainer = document.querySelector('.user-cards-container');
@@ -31,8 +31,8 @@ data.forEach(account => {
   `
 });
 
-// const buttonEdit = document.querySelector('.edit');
-// const buttonDelete = document.querySelector('.delete');
+const buttonEdit = document.querySelector('.edit');
+const buttonDelete = document.querySelector('.delete');
 // const buttonsContainer = document.createElement('div');
 // const buttonEdit = document.createElement('button');
 // const buttonDelete = document.createElement('button');
@@ -43,6 +43,6 @@ data.forEach(account => {
 
 // buttonsContainer.appendChild(buttonDelete);
 
-// buttonDelete.addEventListener('click', () =>{
-//   console.log('click on delete');
-// })
+buttonDelete.addEventListener('click', () =>{
+  console.log('click on delete');
+})

@@ -27,7 +27,7 @@ const saveCheckoutinfo = async (userData) => {
 }
 
 const getInfoAccount = async () => {
-  const apiUrl = `${api}userAccounts`;
+  const apiUrl = `${api}userAccounts/`;
   try {
     const response = await axios.get(apiUrl);
     return response.data;
