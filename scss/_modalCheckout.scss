@@ -1,0 +1,209 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.modal-checkout {
+  width: 375px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 25px;
+  position: relative;
+  &__background {
+    @include m.backgroundModal;
+    z-index: 3;
+    display: none;
+    place-content: center;  
+  }
+  &__card-image-section {
+    background-color: v.$primary-color;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 240px;
+    position: relative;
+    .card {
+      @include m.card('../assets/images/bg-card-front.png');
+      @include m.cardPosition(130px, 20px, 190px, 70px);
+      z-index: 1;
+      letter-spacing: 2px;
+      &__logo {
+        width: 55px;
+        margin-bottom: 30px;
+      }
+      &__number {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+      &__details {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+      @media (min-width: 1115px) {
+        &__logo {
+          width: 85px;
+          margin-bottom: 60px;
+        }
+        &__number {
+          font-size: 2.8rem;
+          margin-bottom: 25px;
+        }
+        &__details {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    .card-back {
+      @include m.card('../assets/images/bg-card-back.png');
+      @include m.cardPosition(30px, 65px, 470px, 160px);
+      letter-spacing: 2px;
+      &__cvc {
+        font-size: 1.6rem;
+        text-align: right;
+        padding-right: 10px;
+        margin-top: 48px;
+        @media (min-width: 1115px) {
+          font-size: 2.4rem;
+          margin-top: 78px;
+          padding-right: 25px;
+        }
+      }
+    }
+    @media (min-width: 1115px) {
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border-top-right-radius: 0px;
+    }
+  }
+  &__form-section{
+    display: grid;
+    place-content: center;
+    .form {
+      // display: none;
+      padding: 70px 24px 40px;
+      justify-self: center;
+      .form__label {
+        @include m.formLabelStyle;
+      }
+      .form__input {
+        @include m.formInputStyle;
+      }
+      &__date-cvc {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 10px;
+      }
+      &__date {
+        display: flex;
+        gap: 10px;
+      }
+      &__button-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        button {
+          @include m.buttonStyleForm;
+        }
+        button:nth-child(1) {
+          background-color: #f3bd93;
+          &:hover {
+            background-color: v.$error-color;
+          }
+        }
+      }  
+    }
+    @media (min-width: 1115px) {
+      width: 100%;
+      padding-left: 250px;
+      .form {
+        width: 450px;
+      }
+    }
+  }
+  .thanks-section {
+    display: none !important;
+    width: 375px;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: grid;
+    justify-items: center;
+    &__img {
+      display: block;
+      margin: auto;
+      margin-bottom: 30px;
+      width: 80px;
+    }
+    &__title {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: v.$extrabold-weight;
+      letter-spacing: 2px;
+      color: v.$secondary-text-color;
+      margin-bottom: 24px;
+    }
+    &__text {
+      text-align: center;
+      color: v.$primary-text-color;
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+    }
+    &__button {
+      cursor: pointer;
+      width: 250px;
+      height: 45px;
+      border: none;
+      border-radius: 10px;
+      background-color: v.$primary-color;
+      color: #ffffff;
+      font-size: 1.7rem;
+      font-weight: v.$semibold-weight;
+      letter-spacing: 1px;
+    }
+    @media (min-width: 1115px) {
+      position: absolute;
+      right: 70px;
+      top: 200px;
+      height: 450px;
+      &__title {
+        font-size: 2.6rem;
+      }
+      &__text {
+        font-size: 2rem;
+      }
+    }
+  }
+  @media (min-width: 1115px) {
+    width: 1115px;
+    display: flex;
+    &__card-image-section {
+      width: 450px;
+      height: 850px;
+    }
+    &__form-container {
+      width: auto;
+      padding-left: 0 !important;
+    }
+  }
+}
+
+.error {
+  color: v.$error-color;
+  margin: -18px 0 20px;
+  font-size: 0.9rem;
+}
+
+.form {
+  &__date-cvc {
+    .form__errors-container {
+      display: flex;
+      gap: 5px;
+      div {
+        width: 100px;
+      }
+    }
+  }
+}

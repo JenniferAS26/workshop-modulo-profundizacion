@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accounts</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__nav">
+        <img class="header__menu" src="../assets/images/icon-menu.svg" alt="menu">
+        <a href="home.html"><img class="header__logo" src="../assets/images/logo.svg" alt="logo"></a>
+        <nav class="navbar">
+          <ul class="navbar__items">
+            <li><a class="navbar__link back-to-home">Collections</a></li>
+            <li><a href="home.html" onclick="filterProduct('Men')" class="navbar__link">Men</a></li>
+            <li><a href="home.html" onclick="filterProduct('Women')" class="navbar__link">Women</a></li>
+            <li><a href="./accounts.html" class="navbar__link">Account</a></li>
+            <li><a href="#" class="navbar__link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header__cart-avatar">
+        <div class="header__cart">
+          <div class="header__cart--counter">0</div>
+          <img src="../assets/images/icon-cart.svg" alt="shopping cart icon">
+        </div>
+        <a href="./registerForm.html"><img class="header__avatar" src="./assets/images/avatarImage.jpg" alt="avatar"></a>
+      </div>
+    </header>
+    <main class="main_content">
+      <div class="user-cards-container">
+        <div class="user-cards-container__card">
+          <div class="user-cards-container__card--image-container">
+            <div class="external-wrapper">
+              <div class="inner-wrapper">
+                <img src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=456&q=80" alt="avatar image">
+              </div>
+            </div>
+          </div>
+          <div class="user-cards-container__card--info">
+            <h3 class="user-cards-container__card--info--title">Mary Robins</h3>
+            <p class="user-cards-container__card--info--text">Información de contacto</p>
+            <p class="user-cards-container__card--info--info-id"><i class="fa-solid fa-id-card"></i> Numero de identificación</p>
+            <p class="user-cards-container__card--info--info-telephone"><i class="fa-solid fa-phone"></i> Telefóno</p>
+            <p class="user-cards-container__card--info--info-email"><i class="fa-solid fa-at"></i> E-mail</p>
+            <div class="user-cards-container__card--info--buttons-container">
+              <button class="card-button edit" type="button">Editar</button>
+              <button class="card-button delete" type="button">Eliminar</button>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="user-cards-container__card">
+          <div class="user-cards-container__card--image-container">
+            <div class="external-wrapper">
+              <div class="inner-wrapper">
+                <img src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=456&q=80" alt="avatar image">
+              </div>
+            </div>
+          </div>
+          <div class="user-cards-container__card--info">
+            <h3 class="user-cards-container__card--info--title">Mary Robins</h3>
+            <p class="user-cards-container__card--info--text">Información de contacto</p>
+            <p class="user-cards-container__card--info--info-id"><i class="fa-solid fa-id-card"></i> Numero de identificación</p>
+            <p class="user-cards-container__card--info--info-telephone"><i class="fa-solid fa-phone"></i> Telefóno</p>
+            <p class="user-cards-container__card--info--info-email"><i class="fa-solid fa-at"></i> E-mail</p>
+            <div class="user-cards-container__card--info--buttons-container">
+              <button class="card-button edit" type="button">Editar</button>
+              <button class="card-button delete" type="button">Eliminar</button>
+            </div>
+          </div>
+        </div>
+        <div class="user-cards-container__card">
+          <div class="user-cards-container__card--image-container">
+            <div class="external-wrapper">
+              <div class="inner-wrapper">
+                <img src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=456&q=80" alt="avatar image">
+              </div>
+            </div>
+          </div>
+          <div class="user-cards-container__card--info">
+            <h3 class="user-cards-container__card--info--title">Mary Robins</h3>
+            <p class="user-cards-container__card--info--text">Información de contacto</p>
+            <p class="user-cards-container__card--info--info-id"><i class="fa-solid fa-id-card"></i> Numero de identificación</p>
+            <p class="user-cards-container__card--info--info-telephone"><i class="fa-solid fa-phone"></i> Telefóno</p>
+            <p class="user-cards-container__card--info--info-email"><i class="fa-solid fa-at"></i> E-mail</p>
+            <div class="user-cards-container__card--info--buttons-container">
+              <button class="card-button edit" type="button">Editar</button>
+              <button class="card-button delete" type="button">Eliminar</button>
+            </div>
+          </div>
+        </div>
+        <div class="user-cards-container__card">
+          <div class="user-cards-container__card--image-container">
+            <div class="external-wrapper">
+              <div class="inner-wrapper">
+                <img src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=456&q=80" alt="avatar image">
+              </div>
+            </div>
+          </div>
+          <div class="user-cards-container__card--info">
+            <h3 class="user-cards-container__card--info--title">Mary Robins</h3>
+            <p class="user-cards-container__card--info--text">Información de contacto</p>
+            <p class="user-cards-container__card--info--info-id"><i class="fa-solid fa-id-card"></i> Numero de identificación</p>
+            <p class="user-cards-container__card--info--info-telephone"><i class="fa-solid fa-phone"></i> Telefóno</p>
+            <p class="user-cards-container__card--info--info-email"><i class="fa-solid fa-at"></i> E-mail</p>
+            <div class="user-cards-container__card--info--buttons-container">
+              <button class="card-button edit" type="button">Editar</button>
+              <button class="card-button delete" type="button">Eliminar</button>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </main>
+  </div>
+
+  <!-- navbar modal start -->
+	<div class="modal-navbar__background">
+		<nav class="modal-navbar">
+			<img class="modal-navbar__close-icon" src="../assets/images/icon-close.svg" alt="close">
+			<ul class="modal-navbar__items">
+				<li><a href="#" class="modal-navbar__link a-collections" onclick="filterProduct('all')">Collections</a></li>
+				<li><a href="#" class="modal-navbar__link a-men" onclick="filterProduct('Men')">Men</a></li>
+				<li><a href="#" class="modal-navbar__link a-women" onclick="filterProduct('Women')">Women</a></li>
+				<li><a href="./accounts.html" class="modal-navbar__link a-account">Account</a></li>
+				<li><a href="#" class="modal-navbar__link a-contact">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+	<!-- navbar modal end -->
+
+	<script src="./src/resources/basicFunctionality.js" type="module"></script>
+  <script type="module" src="./src/mainScripts/account.js"></script>
+  <script src="https://kit.fontawesome.com/4825aba800.js" crossorigin="anonymous"></script>
+</body>
+</html>

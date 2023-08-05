@@ -1,0 +1,86 @@
+@use 'variables';
+
+.header {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(#D3D3D3, 0.682);
+  @media (min-width: 1115px) {
+    height: 110px;
+    border-bottom: 1px solid rgba(#D3D3D3, 0.682);
+  }
+  &__nav {
+    width: 175px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: 1115px) {
+      width: 600px;
+    }  &__active {
+      background-color: variables.$primary-color;
+      color: #ffffff;
+      }
+    }
+  }
+  .header__menu {
+    &:hover {
+      cursor: pointer;
+    }
+    @media (min-width: 1115px) {
+      display: none;
+    }
+  }
+  .header__cart-avatar {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (min-width: 1115px) {
+      width: 130px;
+    }
+  }
+  .header__cart {
+    position: relative;
+    &--counter {
+      display: none;
+      background-color: variables.$primary-color;
+      color: #ffffff;
+      font-size: 10px;
+      text-align: center;
+      width: 15px;
+      height: 12px;
+      border-radius: 16px;
+      position: absolute;
+      top: -2px;
+      right: -5px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .header__avatar {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 50%;
+    @media (min-width: 1115px) {
+      width: 50px;
+      height: 50px;
+    }
+    &:hover {
+      cursor: pointer;
+      border: 2px solid variables.$primary-color;
+      border-radius: 50%;
+    }
+}
+
+
+
+
+// .class-text {
+//   width: 100%;
+// }

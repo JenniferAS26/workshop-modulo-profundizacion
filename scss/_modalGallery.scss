@@ -1,0 +1,80 @@
+@use 'variables' as v;
+@use 'mixins';
+
+.modal-gallery {
+  width: 550px;
+  &__background {
+    @include mixins.backgroundModal;
+    z-index: 2;
+    display: none;
+    place-content: center;
+  }
+  &__close-container {
+    text-align: right;
+    height: 40px;
+  }
+  &__close {
+    width: 26px;
+    z-index: 6;
+    &:hover {
+      cursor: pointer;
+      content: url('../assets/images/icon-close-orange.svg');
+    }
+  }
+  &__image-container {
+    // background-image: url('../assets/images/image-product-1.jpg');
+    height: 550px;
+    background-size: cover;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 26px;
+    }
+  }
+  &__previuos {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% + 10px);
+    right: calc(50% - -250px);
+    &:hover img {
+      content: url('../assets/images/icon-previous-orange.svg');
+    }
+  }
+  &__next {
+    @extend .modal-gallery__previuos;
+    left: calc(50% - -250px);
+    &:hover img {
+      content: url('../assets/images/icon-next-orange.svg');
+    }
+  }
+  &__thumbnails {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__thumbnail {
+    width: 90px;
+    border-radius: 16px;
+    &:hover {
+      opacity: 0.5;
+      border: 2px solid v.$primary-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.class-text {
+  width: 100%;
+}

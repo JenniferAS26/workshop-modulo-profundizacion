@@ -1,0 +1,100 @@
+@use 'variables' as v;
+@use 'mixins';
+
+.product-details {
+  padding: 24px;
+  &__company {
+    text-transform: uppercase;
+    color: v.$primary-color;
+    font-size: 1.6rem;
+    font-weight: v.$extrabold-weight;
+    letter-spacing: 1.2px;
+  }
+  &__title {
+    margin: 15px 0;
+    font-size: 2.8rem;
+    font-weight: v.$extrabold-weight;
+    line-height: 1;
+  }
+  &__description {
+    font-size: 1.5rem;
+    font-weight: v.$medium-weight;
+    line-height: 1.5;
+    color: v.$primary-text-color;
+    margin-bottom: 25px;
+  }
+  &__prices {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  &__current {
+    font-size: 2.6rem;
+    font-weight: v.$extrabold-weight;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  &__discount {
+    background-color: v.$secondary-color;
+    padding: 0.4rem 1.1rem;
+    font-size: 1.5rem;
+    font-weight: v.$extrabold-weight;
+    color: v.$primary-color;
+    border-radius: 5px;
+  }
+  &__last {
+    font-size: 1.5rem;
+    font-weight: v.$extrabold-weight;
+    letter-spacing: 1.6px;
+    color: #b6bcc8;
+    text-decoration: line-through;
+  }
+  &__button {
+    @include mixins.buttonStyle;
+    margin-top: 20px;
+
+  }
+  
+  @media (min-width: 1115px) {
+    width: 450px;
+    padding-top: 60px;
+    &__title {
+      font-size: 3.8rem;
+      margin-bottom: 48px;
+    }
+    &__description {
+      font-size: 2.1rem;
+      margin-bottom: 37px;
+    }
+    &__prices {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__product-quantity {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    &__button {
+      margin-top: 0;
+  
+    }
+  }
+}
+.swal-modal {
+  border-radius: 20px;
+  .swal-button {
+    background-color: v.$primary-color;
+    font-size: 1.6rem;
+    &:not([disabled]):hover {
+      background-color: v.$primary-color;
+      opacity: 0.5;
+    }
+  }
+}
+
+// .class-text {
+//   width: 100%;
+// }

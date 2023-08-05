@@ -1,0 +1,85 @@
+@use 'variables' as v;
+
+.gallery {
+  z-index: 1;
+  &__image-container {
+    width: 100%;
+    height: 300px;
+    // background-image: url('../assets/images/image-product-1.jpg');
+    // background-size: cover;
+    // position: relative;
+  }
+  &__image {
+    width: 100%;
+    height: 300px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__previuos {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(20% - 20px);
+    right: 325px;
+    z-index: 1;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__next {
+    @extend .gallery__previuos;
+    left: 325px;
+  }
+  &__thumbnails {
+    display: none;
+    @media (min-width: 1115px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__thumbnail {
+    width: 70px;
+    border-radius: 16px;
+    &:hover {
+      opacity: 0.5;
+      border: 2px solid v.$primary-color;
+      cursor: pointer !important;
+    }
+  }
+  @media (min-width: 1115px) {
+    width: 450px;
+    &__image-container {
+      height: 450px;
+      object-fit: cover;
+      margin-bottom: 32px;
+      &:hover {
+        cursor: pointer;
+      }
+      button {
+        display: none;
+      }
+    }
+    &__image {
+      width: 100%;
+      height: 450px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+    }
+  }
+}
+
+// .class-text {
+//   width: 100%;
+// }

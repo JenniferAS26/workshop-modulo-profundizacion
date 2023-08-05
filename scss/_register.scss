@@ -1,0 +1,59 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.form-wrapper {
+  width: 100%;
+  height: 100%;
+  &__image-container {
+    width: 375px;
+    height: 375px;
+    background-image: url('../assets/frames/imageRegister.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__form-section {
+    width: 100%;
+    display: grid;
+    .form {
+      // display: none;
+      padding: 50px 24px 40px;
+      .form__label {
+        @include m.formLabelStyle;
+      }
+      .form__input {
+        @include m.formInputStyle;
+        font-size: 1.7rem;
+        font-weight: v.$extrabold-weight;
+        letter-spacing: 1px;
+        color: v.$secondary-text-color;
+      }
+      &__button-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        button {
+          @include m.buttonStyleForm;
+        }
+      }
+    }
+  }
+  @media (min-width: 1115px) {
+    width: 1115px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    &__image-container {
+      background-image: url('../assets/frames/imageRegister2.png');
+    }
+    &__form-section {
+      width: 450px;
+    }
+  }
+}
+
+.error {
+  color: v.$error-color;
+  margin: -18px 0 20px;
+  font-size: 0.9rem;
+}

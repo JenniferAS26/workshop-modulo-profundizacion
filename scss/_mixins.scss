@@ -1,0 +1,98 @@
+@use 'variables' as v;
+
+@mixin backgroundModal {
+  background-color: v.$black-modal;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin buttonStyle {
+  cursor: pointer;
+  width: 100%;
+  height: 54px;
+  border: none;
+  border-radius: 8px;
+  background-color: v.$primary-color;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: v.$extrabold-weight;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+@mixin buttonStyleForm {
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: v.$primary-color;
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: v.$semibold-weight;
+  letter-spacing: 1px;
+  @media (min-width: 1115px) {
+    width: 190px;
+  }
+}
+
+@mixin card($url) {
+  width: 290px;
+  height: 160px;
+  color: #ffffff;
+  padding: 20px;
+  background: {
+    image: url($url);
+    repeat: no-repeat;
+    size: contain;
+  }
+  @media (min-width: 1115px) {
+    width: 450px;
+    height: 250px;
+    padding: 30px;
+  }
+}
+
+@mixin cardPosition($m-top, $m-left, $d-top, $d-left) {
+  position: absolute;
+  top: $m-top;
+  left: $m-left;
+  @media (min-width: 1115px) {
+    top: $d-top;
+    left: $d-left;
+  }
+}
+
+@mixin formLabelStyle {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+  font-weight: v.$extrabold-weight;
+  display: block;
+  margin-bottom: 8px;
+  color: v.$secondary-text-color;
+}
+
+@mixin formInputStyle {
+  width: 100%;
+  height: 40px;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #D3D3D3;
+  &::placeholder {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+  }
+  &:focus {
+    outline: 1.5px solid v.$primary-color;
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__nav">
+        <img class="header__menu" src="../assets/images/icon-menu.svg" alt="menu">
+        <a href="home.html"><img class="header__logo" src="../assets/images/logo.svg" alt="logo"></a>
+        <nav class="navbar">
+          <ul class="navbar__items">
+            <li><a class="navbar__link back-to-home">Collections</a></li>
+            <li><a href="home.html" onclick="filterProduct('Men')" class="navbar__link">Men</a></li>
+            <li><a href="home.html" onclick="filterProduct('Women')" class="navbar__link">Women</a></li>
+            <li><a href="./accounts.html" class="navbar__link">Account</a></li>
+            <li><a href="#" class="navbar__link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header__cart-avatar">
+        <div class="header__cart">
+          <div class="header__cart--counter">0</div>
+          <img src="../assets/images/icon-cart.svg" alt="shopping cart icon">
+        </div>
+        <a href="./registerForm.html"><img class="header__avatar" src="./assets/images/avatarImage.jpg" alt="avatar"></a>
+      </div>
+    </header>
+    <div class="form-wrapper">
+      <div class="form-wrapper__image-container"></div>
+      <section class="form-wrapper__form-section">
+        <form class="form-wrapper__form form">
+          <label class="form__label" for="input-name-fw">Nombre Completo</label>
+          <input class="form-wrapper__input form__input" name="name" id="input-name-fw" type="text" placeholder="e.g. John Smith"/>
+          <div class="form-wrapper__name--error error"></div>
+          <label class="form__label" for="input-id-fw">Número de identificación</label>
+          <input class="form-wrapper__input form__input" name="identification" id="input-id-fw" type="text" placeholder="e.g. 111111111"/>
+          <div class="form-wrapper__identification--error error"></div>
+          <label class="form__label" for="input-telephone-fw">Teléfono</label>
+          <input class="form-wrapper__input form__input" name="telephone" id="input-telephone-fw" type="text" placeholder="e.g. 3332221111"/>
+          <div class="form-wrapper__telephone--error error"></div>
+          <label class="form__label" for="input-email-fw">Correo electrónico</label>
+          <input class="form-wrapper__input form__input" name="email" id="input-email-fw" type="text" placeholder="e.g. example@mail.com"/>
+          <div class="form-wrapper__email--error error"></div>
+          <div class="form__button-container register-button-container">
+            <button class="form-wrapper__button form__button register-button-container__create" type="submit">Crear cuenta</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <!-- navbar modal start -->
+	<div class="modal-navbar__background">
+		<nav class="modal-navbar">
+			<img class="modal-navbar__close-icon" src="../assets/images/icon-close.svg" alt="close">
+			<ul class="modal-navbar__items">
+				<li><a href="#" class="modal-navbar__link a-collections" onclick="filterProduct('all')">Collections</a></li>
+				<li><a href="#" class="modal-navbar__link a-men" onclick="filterProduct('Men')">Men</a></li>
+				<li><a href="#" class="modal-navbar__link a-women" onclick="filterProduct('Women')">Women</a></li>
+				<li><a href="./accounts.html" class="modal-navbar__link a-account">Account</a></li>
+				<li><a href="#" class="modal-navbar__link a-contact">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+	<!-- navbar modal end -->
+
+	<script type="module" src="./src/resources/basicFunctionality.js"></script>
+  <script type="module" src="./src/mainScripts/registerForm.js"></script>
+
+</body>
+</html>

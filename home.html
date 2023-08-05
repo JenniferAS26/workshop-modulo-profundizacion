@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>sneakers</title>
+	<link rel="icon" type="image/jpg" href="./assets/icons/favicon.png">
+	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__nav">
+				<img class="header__menu" src="../assets/images/icon-menu.svg" alt="menu">
+				<a href="home.html"><img class="header__logo" src="../assets/images/logo.svg" alt="logo"></a>
+				<nav class="navbar">
+					<ul class="navbar__items">
+						<li><a href="#" class="navbar__link" onclick="filterProduct('all')">Collections</a></li>
+						<li><a href="#" class="navbar__link" onclick="filterProduct('Men')">Men</a></li>
+						<li><a href="#" class="navbar__link" onclick="filterProduct('Women')">Women</a></li>
+						<li><a href="./accounts.html" class="navbar__link">Account</a></li>
+						<li><a href="#" class="navbar__link">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="header__cart-avatar">
+				<div class="header__cart">
+					<div class="header__cart--counter">0</div>
+					<img src="../assets/images/icon-cart.svg" alt="shopping cart icon">
+				</div>
+				<a href="./registerForm.html"><img class="header__avatar" src="./assets/images/avatarImage.jpg" alt="avatar"></a>
+			</div>
+		</header>
+		<div class="home-container"></div>
+		<div class="cart-modal">
+			<p class="cart-modal__title">Cart</p>
+			<div class="cart-modal__checkout-container">
+				<div class="cart-modal__detail-container">
+					<img class="thumbnail-image" src="./assets/images/loadingScreen.png" alt="thumbnail">
+					<div>
+						<p class="cart-modal__product">Autumn Limited Edition..</p>
+						<p class="cart-modal__price">$125.00 x3 <span>$375.00</span></p>
+					</div>
+					<img class="cart-modal__delete" src="./assets/images/icon-delete.svg" alt="delete">
+				</div>
+				<button class="cart-modal__checkout">Checkout</button>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<h4>Sprint 2 Presentado por:</h4>
+		<div class="footer__names-container">
+			<a href="https://github.com/JenniferAS26" target="_blank">
+				<p>Jennifer Alarcón</p>
+			</a>
+			<a href="https://github.com/kellyjohanasalb" target="_blank">
+				<p>Kelly Saldaña</p>
+			</a>
+			<a href="https://github.com/mamorenoc2" target="_blank">
+				<p>Manuela Moreno</p>
+			</a>
+		</div>
+	</footer>
+	<!-- navbar modal start -->
+	<div class="modal-navbar__background">
+		<nav class="modal-navbar">
+			<img class="modal-navbar__close-icon" src="../assets/images/icon-close.svg" alt="close">
+			<ul class="modal-navbar__items">
+				<li><a href="#" class="modal-navbar__link a-collections" onclick="filterProduct('all')">Collections</a></li>
+				<li><a href="#" class="modal-navbar__link a-men" onclick="filterProduct('Men')">Men</a></li>
+				<li><a href="#" class="modal-navbar__link a-women" onclick="filterProduct('Women')">Women</a></li>
+				<li><a href="./accounts.html" class="modal-navbar__link a-account">Account</a></li>
+				<li><a href="#" class="modal-navbar__link a-contact">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+	<!-- navbar modal end -->
+
+	<script src="./src/mainScripts/home.js" type="module"></script>
+	<script src="./src/resources/filterProduct.js"></script>
+	<script src="./src/resources/basicFunctionality.js" type="module"></script>
+</body>
+</html>
