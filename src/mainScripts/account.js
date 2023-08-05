@@ -33,7 +33,10 @@ data.forEach(account => {
 });
 
 const getAllEditButtons = document.querySelectorAll('.edit')
-// getAllEditButtons.forEach(editButton => editButton.onclick = updateAccount)
+
+getAllEditButtons.forEach(editButton => 
+  editButton.onclick = () => updateAccount(editButton.parentElement.id))
+
 
 const getAllDeleteButtons = document.querySelectorAll('.delete')
 
