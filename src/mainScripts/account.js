@@ -1,14 +1,14 @@
-import { getInfoAccount, updateAccount, deteleAccount } from "../services/api.js";
+import { getInfoAccount, updateAccount, deleteAccount } from "../services/api.js";
 const data = await getInfoAccount();
 
 let cardsContainer = document.querySelector('.user-cards-container');
 
 
 data.forEach(account => {
-  const { name, identification, telephone, email, avatar } = account;
+  const { name, identification, telephone, email, avatar, id } = account;
 
   cardsContainer.innerHTML += `
-  <div class="user-cards-container__card">
+  <div class="user-cards-container__card" id="user-cards-container__card--${id}">
     <div class="user-cards-container__card--image-container">
       <div class="external-wrapper">
         <div class="inner-wrapper">
@@ -22,27 +22,31 @@ data.forEach(account => {
       <p class="user-cards-container__card--info--info-id"><i class="fa-solid fa-id-card"></i> ${identification}</p>
       <p class="user-cards-container__card--info--info-telephone"><i class="fa-solid fa-phone"></i> ${telephone}</p>
       <p class="user-cards-container__card--info--info-email"><i class="fa-solid fa-at"></i> ${email}</p>
-      <div class="user-cards-container__card--info--buttons-container">
-        <button class="card-button edit" type="button">Editar</button>
-        <button class="card-button delete" type="button">Eliminar</button>
+      <div class="user-cards-container__card--info--buttons-container" id="${id}">
+        <button class="card-button edit" type="button" >Editar</button>
+        <button class="card-button delete" type="button" >Eliminar</button>
       </div>
     </div>
   </div>
-  `
+  `;
 });
 
-// const buttonEdit = document.querySelector('.edit');
-// const buttonDelete = document.querySelector('.delete');
-// const buttonsContainer = document.createElement('div');
-// const buttonEdit = document.createElement('button');
-// const buttonDelete = document.createElement('button');
+const getAllEditButtons = document.querySelectorAll('.edit')
+// getAllEditButtons.forEach(editButton => editButton.onclick = updateAccount)
 
-// buttonsContainer.classList = 'user-cards-container__card--info--buttons-container';
-// buttonEdit.className = 'card-button edit';
-// buttonDelete.className = 'card-button delete';
+const getAllDeleteButtons = document.querySelectorAll('.delete')
 
-// buttonsContainer.appendChild(buttonDelete);
+getAllDeleteButtons.forEach(deleteButton => deleteButton
+  .onclick = () => deleteAccount(deleteButton.parentElement.id))
 
-// buttonDelete.addEventListener('click', () =>{
-//   console.log('click on delete');
-// })
+
+async function editUserCard() {
+  console.log(this, 'this') 
+  alert('TIME TO EDIT THIS USER CARDxd')
+   // ...
+/****************************
+*      HI, JENNIFER!       *
+*  HERE YOU CAN PUT LOGIC  *
+* FOR ALL THE EDIT BUTTONS *
+****************************/
+}
