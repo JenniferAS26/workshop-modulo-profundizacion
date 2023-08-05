@@ -60,7 +60,7 @@ const updateAccount = async (userId) => {
   }
 }
 
-const deteleAccount = async (userId) => {
+const deleteAccount = async (userId) => {
   const apiUrl = `${api}userAccounts/`;
   try {
     await axios.delete(`${apiUrl}${userId}`);
@@ -72,4 +72,4 @@ const deteleAccount = async (userId) => {
 }
 
 
-export { getData, saveCheckoutinfo, getInfoAccount, createAccount, updateAccount, deteleAccount };
+export { getData, saveCheckoutinfo, getInfoAccount, createAccount, updateAccount, deleteAccount };
