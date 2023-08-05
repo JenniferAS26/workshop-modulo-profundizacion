@@ -187,7 +187,7 @@ const detailSection = async () => {
       title: "Se han añadido con éxito los productos al carrito",
       icon: "./assets/icons/check.png",
       button: "Continuar",
-      customClass: {
+      "customClass": {
         button: 'custom-button',
         htmlContainer: 'custom-container'
       },
