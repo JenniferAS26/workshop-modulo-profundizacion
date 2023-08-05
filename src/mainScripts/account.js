@@ -1,5 +1,6 @@
-import { getInfoAccount, updateAccount, deleteAccount } from "../services/api.js";
-const data = await getInfoAccount();
+import { readAccounts, updateAccount, deleteAccount } from "../services/api.js";
+
+const data = await readAccounts();
 
 let cardsContainer = document.querySelector('.user-cards-container');
 
@@ -36,17 +37,5 @@ const getAllEditButtons = document.querySelectorAll('.edit')
 
 const getAllDeleteButtons = document.querySelectorAll('.delete')
 
-getAllDeleteButtons.forEach(deleteButton => deleteButton
-  .onclick = () => deleteAccount(deleteButton.parentElement.id))
-
-
-async function editUserCard() {
-  console.log(this, 'this') 
-  alert('TIME TO EDIT THIS USER CARDxd')
-   // ...
-/****************************
-*      HI, JENNIFER!       *
-*  HERE YOU CAN PUT LOGIC  *
-* FOR ALL THE EDIT BUTTONS *
-****************************/
-}
+getAllDeleteButtons.forEach(deleteButton => 
+  deleteButton.onclick = () => deleteAccount(deleteButton.parentElement.id))

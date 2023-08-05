@@ -1,7 +1,7 @@
-import { getData } from '../services/api.js';
+import { getProducts } from '../services/api.js';
 
 const homeSection = async () => {
-  const products = await getData();
+  const products = await getProducts();
   const homeContainer = document.querySelector('.home-container');
   homeContainer.innerHTML = '';
 
