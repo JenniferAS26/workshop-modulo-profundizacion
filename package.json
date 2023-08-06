@@ -274,7 +274,7 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "start": "json-server --watch db.json --port 3000"
+    "start": "json-server --watch src/data/db.json --port 3000"
   },
   "repository": {
     "type": "git",
