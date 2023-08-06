@@ -1,0 +1,53 @@
+import { updateInputLastState, validInputReturn } from "../formValidation.js"
+import './telephoneInput.js'
+
+const identificationInput = document.querySelector('[name="identification"]')
+const telephoneInput = document.querySelector('[name="telephone"]')
+const numberInputs = [ identificationInput, telephoneInput ]
+
+numberInputs.forEach(numberInput => {
+    numberInput.onkeydown = e => {
+        // if key == specialKey || letter, allow
+        const specialKeys = e.key == 'Backspace' || e.key == '+' || e.key == 'ArrowRight'
+        || e.key == 'Control' || e.key == 'Tab' || e.key == 'Enter' || e.key == 'ArrowLeft'
+        const exceptions = specialKeys || e.key.match(/^[0-9]+$/) 
+
+        if (e.ctrlKey || exceptions) return
+        e.preventDefault() // else || moreSpaces, block.
+    }
+
+    numberInput.onkeyup = e => {
+        const errorLabelOfNumberInput = numberInput.nextElementSibling == null 
+        ? numberInput.parentElement.nextElementSibling : numberInput.nextElementSibling 
+
+        // if empty, invalidate and change label
+        !numberInput.value.length && (e.key?.match(/^[0-9]+$/) || e.key == 'Backspace')
+        ? errorLabelOfNumberInput.innerText = `Your ${numberInput.name} cannot be empty`
+        : errorLabelOfNumberInput.innerText = 'Only numbers allowed'
+
+        // if it's not a number, invalidate
+        if (!numberInput.value.length || (!e.key?.match(/^[0-9]+$/) && !e.key == 'Backspace')) {
+            numberInput.currentState = false
+            return updateInputLastState(numberInput)   
+        }
+
+        // if it's a number, must have 9 digits at least
+        if (numberInput.value.length < 9 && numberInput.value.length > 0) {
+            console.log(numberInput.name)
+            return errorLabelOfNumberInput.innerText = `Your ${numberInput.name} must have 10 numbers at least`
+        }
+
+        // if its a number with 9 or more digits, validate
+        validInputReturn(numberInput, errorLabelOfNumberInput)
+    }
+
+    numberInput.oninput = e => {
+        // CURIOSITY: [auto complete] input event trigger has no inputType property defined
+        if (e.inputType != 'insertFromPaste' && e.inputType != undefined) return 
+
+        let curatedInput = numberInput.value
+        .replace(/\D+/g, ' ').replace(/ +/g, '').trim()
+
+        return numberInput.value = curatedInput
+    }
+})

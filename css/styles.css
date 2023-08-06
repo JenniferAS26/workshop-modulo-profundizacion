@@ -1193,4 +1193,46 @@ a {
   margin-top: 25px;
 }
 
+/* Daniel's style classes.  */
+/* These can be deleted if you hate them */
+
+
+/* Invalid Form Inputs  */
+.invalidFormInput {
+  width: 100%;
+  height: 40px;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid hsl(0, 100%, 66%);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: hsl(0, 100%, 66%);
+}
+.invalidFormInput::placeholder {
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+.invalidFormInput:focus {
+  outline: 1.5px solid hsl(0, 100%, 66%);
+}
+
+
+/* on blur form input styles */
+.blurValidFormInput {
+  outline: 1.5px solid rgb(249, 229, 14);
+}
+
+
+/* Preserve our styles when implement Intl-tell-input   */
+.iti {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form-wrapper__telephone--error {
+  min-height: 1px;
+}
+
 /*# sourceMappingURL=styles.css.map */
