@@ -477,30 +477,37 @@
   ],
   "userAccounts": [
     {
-      "name": "Jennifer Alarcon",
-      "identification": "1088016820",
+      "name": "Jennifer Alarcón Serna",
+      "identification": "1088016810",
       "telephone": "3154281024",
-      "email": "jenniferalarconserna@gmail.com",
-      "creditCard": "1234567896358",
-      "avatar": "https://images.unsplash.com/photo-1639628735078-ed2f038a193e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+      "email": "jalarcon@utp.edu.co",
+      "avatar": "https://images.unsplash.com/photo-1691268891144-09cb1cb7eb04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      "github": "https://github.com/JenniferAS26",
+      "linkedin": "https://www.linkedin.com/in/jenniferas26/",
+      "birthday": "2023-08-04",
       "id": 1
     },
     {
-      "name": "Kelly Saldaña",
-      "identification": "12345678",
-      "telephone": "3204698125",
-      "email": "kellyS@gmail.com",
-      "creditCard": "12345678910",
-      "avatar": "https://images.unsplash.com/photo-1638643391904-9b551ba91eaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+      "name": "Camilo Marin",
+      "identification": "",
+      "telephone": "3256987",
+      "email": "",
+      "avatar": "https://plus.unsplash.com/premium_photo-1663853120673-630589b43dda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      "github": "",
+      "linkedin": "",
+      "birthday": "2023-08-17",
       "id": 2
     },
     {
-      "name": "Santiago Olarte",
+      "name": "Santiago Olarte Zapata",
       "identification": "1099345987",
       "telephone": "3167892546",
       "email": "san@gmail.com",
       "creditCard": "1478 9532 4687 2369",
       "avatar": "https://images.unsplash.com/photo-1638803040283-7a5ffd48dad5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+      "github": "",
+      "linkedin": "",
+      "birthday": "",
       "id": 3
     },
     {
@@ -508,35 +515,22 @@
       "identification": "35469785",
       "telephone": "3201478695",
       "email": "kev@mail.com",
-      "creditCard": "6085 0169 7412 2146",
       "avatar": "https://images.unsplash.com/photo-1636622433525-127afdf3662d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80",
+      "github": "",
+      "linkedin": "",
+      "birthday": "",
       "id": 4
     },
     {
-      "name": "Manuela Morena",
-      "identification": "106688774621",
-      "telephone": "31145669",
-      "email": "manu@gmail.com",
-      "creditCard": "1478 5698 4213 2684",
-      "avatar": "https://images.unsplash.com/photo-1640379878948-72b9db349e17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
+      "name": "Manuela Moreno",
+      "identification": "1055448914",
+      "telephone": "3105897142",
+      "email": "mmoreno@gmail.com",
+      "avatar": "https://images.unsplash.com/photo-1681863177225-5fa13305ea95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80",
+      "github": "https://github.com/manuela",
+      "linkedin": "https://www.linkedin.com/in/manuela/",
+      "birthday": "2023-05-25",
       "id": 5
-    },
-    {
-      "name": "Ernesto Lopez",
-      "identification": "1478523698",
-      "telephone": "3205697841",
-      "email": "ernesto@email.com",
-      "creditCard": "1598 7532 1698 7441",
-      "avatar": "https://images.unsplash.com/photo-1638957319391-9b81b996afca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-      "id": 6
-    },
-    {
-      "name": "Camille Smith",
-      "identification": "14782168",
-      "telephone": "3652147894",
-      "email": "camille@mail.com",
-      "avatar": "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
-      "id": 7
     },
     {
       "name": "Leonardo Jaimes",
@@ -544,6 +538,9 @@
       "telephone": "3205698741",
       "email": "leojaimes@gmail.com",
       "avatar": "https://images.unsplash.com/photo-1628260412297-a3377e45006f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+      "github": "",
+      "linkedin": "",
+      "birthday": "",
       "id": 8
     }
   ]

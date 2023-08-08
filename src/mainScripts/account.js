@@ -32,6 +32,17 @@ data.forEach(account => {
   `;
 });
 
+
+const form = document.querySelector('.modal-upload-account__form-section--form');
+const avatar = document.querySelector('.input-image');
+const nameInput = document.querySelector('.name-input');
+const idNumberInput = document.querySelector('.idnumber-input');
+const telephoneInput = document.querySelector('.telephone-input');
+const emailInput = document.querySelector('.email-input');
+const dateInput = document.querySelector('.date-input');
+const githubInput = document.querySelector('.github-input');
+const linkedinInput = document.querySelector('.linkedin-input');
+
 // Show/Close Modal Update Account
 const modalUpdateAccount = document.querySelector('.modal-upload-account__background');
 const closeModalButton = document.querySelector('.cancel');
@@ -43,14 +54,60 @@ const getAllEditButtons = document.querySelectorAll('.edit');
 
 getAllEditButtons.forEach(editButton => 
   editButton.onclick = () => {
-    updateAccount(editButton.parentElement.id)
     modalUpdateAccount.style.display = 'grid';
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      console.log(nameInput.value, nameInput.value == '');
+      const formInputValues = {
+        name: nameInput.value,
+        identification: idNumberInput.value,
+        telephone: telephoneInput.value,
+        email: emailInput.value,
+        avatar: avatar.value,
+        github: githubInput.value,
+        linkedin: linkedinInput.value,
+        birthday: dateInput.value
+      }
+      for (const key in formInputValues) {
+        if (formInputValues[key]) continue
+        delete formInputValues[key];
+      }
+      updateAccount(editButton.parentElement.id, formInputValues)
+    })
+    
   });
 
 
 const getAllDeleteButtons = document.querySelectorAll('.delete');
 
 getAllDeleteButtons.forEach(deleteButton => 
-  deleteButton.onclick = () => deleteAccount(deleteButton.parentElement.id));
+  deleteButton.onclick = async () => {
+    const result = await Swal.fire({
+      title: 'Delete Account',
+      text: 'Are you sure you want to delete your account?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'Cancel',
+      reverseButtons: true,
+      "customClass": {
+        button: 'custom-button',
+        htmlContainer: 'custom-container'
+      },
+    })
+    if (result.isConfirmed) {
+      // User confirmed deletion, you can trigger your logic here
+      const deleteConfirmed = true;
+      // Use 'deleteConfirmed' in your logic to proceed with account deletion
+      console.log('Account deletion confirmed');
+      deleteAccount(deleteButton.parentElement.id)
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      // User cancelled deletion
+      const deleteConfirmed = false;
+      // Use 'deleteConfirmed' in your logic to handle cancellation
+      console.log('Account deletion cancelled');
+    }
+    
+  });
 
 

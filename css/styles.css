@@ -1131,6 +1131,11 @@ i {
   color: #d66108;
 }
 
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  background-color: #FF7D1A !important;
+  box-shadow: 10px 12px 21px -11px #FF7D1A !important;
+}
+
 .modal-upload-account {
   width: 375px;
   height: 1050px;
