@@ -7,6 +7,8 @@ export { getProducts } from './products/getProducts.js'
 
 export { saveCheckoutinfo } from './orders/saveCheckoutInfo.js'
 
+
+import './accounts/test.js'
 // import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
 // // import axios from 'axios';
 
