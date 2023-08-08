@@ -33,67 +33,7 @@
     </header>
     <main class="main_content">
       <div class="user-cards-container">
-        <div class="user-cards-container__card">
-          <div class="user-cards-container__card--image-container">
-            <div class="external-wrapper">
-              <div class="inner-wrapper">
-                <img src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=456&q=80" alt="avatar image">
-              </div>
-            </div>
-          </div>
-          <div class="user-cards-container__card--info">
-            <h3 class="user-cards-container__card--info--title">Mary Robins</h3>
-            <p class="user-cards-container__card--info--text">Información de contacto</p>
-            <p class="user-cards-container__card--info--info-id"><i class="fa-solid fa-id-card"></i> Numero de identificación</p>
-            <p class="user-cards-container__card--info--info-telephone"><i class="fa-solid fa-phone"></i> Telefóno</p>
-            <p class="user-cards-container__card--info--info-email"><i class="fa-solid fa-at"></i> E-mail</p>
-            <div class="user-cards-container__card--info--buttons-container">
-              <button class="card-button edit" type="button">Editar</button>
-              <button class="card-button delete" type="button">Eliminar</button>
-            </div>
-          </div>
-        </div>
         <!-- <div class="user-cards-container__card">
-          <div class="user-cards-container__card--image-container">
-            <div class="external-wrapper">
-              <div class="inner-wrapper">
-                <img src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=456&q=80" alt="avatar image">
-              </div>
-            </div>
-          </div>
-          <div class="user-cards-container__card--info">
-            <h3 class="user-cards-container__card--info--title">Mary Robins</h3>
-            <p class="user-cards-container__card--info--text">Información de contacto</p>
-            <p class="user-cards-container__card--info--info-id"><i class="fa-solid fa-id-card"></i> Numero de identificación</p>
-            <p class="user-cards-container__card--info--info-telephone"><i class="fa-solid fa-phone"></i> Telefóno</p>
-            <p class="user-cards-container__card--info--info-email"><i class="fa-solid fa-at"></i> E-mail</p>
-            <div class="user-cards-container__card--info--buttons-container">
-              <button class="card-button edit" type="button">Editar</button>
-              <button class="card-button delete" type="button">Eliminar</button>
-            </div>
-          </div>
-        </div>
-        <div class="user-cards-container__card">
-          <div class="user-cards-container__card--image-container">
-            <div class="external-wrapper">
-              <div class="inner-wrapper">
-                <img src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=456&q=80" alt="avatar image">
-              </div>
-            </div>
-          </div>
-          <div class="user-cards-container__card--info">
-            <h3 class="user-cards-container__card--info--title">Mary Robins</h3>
-            <p class="user-cards-container__card--info--text">Información de contacto</p>
-            <p class="user-cards-container__card--info--info-id"><i class="fa-solid fa-id-card"></i> Numero de identificación</p>
-            <p class="user-cards-container__card--info--info-telephone"><i class="fa-solid fa-phone"></i> Telefóno</p>
-            <p class="user-cards-container__card--info--info-email"><i class="fa-solid fa-at"></i> E-mail</p>
-            <div class="user-cards-container__card--info--buttons-container">
-              <button class="card-button edit" type="button">Editar</button>
-              <button class="card-button delete" type="button">Eliminar</button>
-            </div>
-          </div>
-        </div>
-        <div class="user-cards-container__card">
           <div class="user-cards-container__card--image-container">
             <div class="external-wrapper">
               <div class="inner-wrapper">
@@ -115,6 +55,7 @@
         </div> -->
       </div>
     </main>
+    
   </div>
 
   <!-- navbar modal start -->
@@ -122,18 +63,71 @@
 		<nav class="modal-navbar">
 			<img class="modal-navbar__close-icon" src="../assets/images/icon-close.svg" alt="close">
 			<ul class="modal-navbar__items">
-				<li><a href="#" class="modal-navbar__link a-collections" onclick="filterProduct('all')">Collections</a></li>
-				<li><a href="#" class="modal-navbar__link a-men" onclick="filterProduct('Men')">Men</a></li>
-				<li><a href="#" class="modal-navbar__link a-women" onclick="filterProduct('Women')">Women</a></li>
-				<li><a href="./accounts.html" class="modal-navbar__link a-account">Account</a></li>
-				<li><a href="#" class="modal-navbar__link a-contact">Contact</a></li>
+				<li><a class="navbar__link back-to-home">Collections</a></li>
+        <li><a href="home.html" onclick="filterProduct('Men')" class="navbar__link">Men</a></li>
+        <li><a href="home.html" onclick="filterProduct('Women')" class="navbar__link">Women</a></li>
+        <li><a href="./accounts.html" class="navbar__link">Account</a></li>
+        <li><a href="#" class="navbar__link">Contact</a></li>
 			</ul>
 		</nav>
 	</div>
 	<!-- navbar modal end -->
 
+  <!-- upload account modal start -->
+  <div class="modal-upload-account__background">
+    <div class="modal-upload-account">
+      <h2 class="modal-upload-account__title">Editar cuenta</h2>
+      <section class="modal-upload-account__profile-picture">
+        <div class="modal-upload-account__profile-picture--wrapper">
+          <figure class="wrapper__image-container">
+            <img src="https://images.unsplash.com/photo-1691308138375-1e887021be52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="dummy image ">
+          </figure>
+          <div class="wrapper__input-container">
+            <label for="input-url">Copy here the link of you new profile picture</label>
+            <input type="text" placeholder="URL" id="input-url" class="input-image">
+          </div>
+        </div>
+      </section>
+      <section class="modal-upload-account__form-section">
+        <form class="modal-upload-account__form-section--form form">
+					<label class="form__label name-label" for="input-name">Nombre Completo</label>
+					<input class="modal-upload-account__input form__input name-input" name="name" id="input-name" type="text" placeholder="e.g. John Smith"/>
+					<div class="modal-upload-account__name--error error"></div>
+
+					<label class="form__label idnumber-label" for="input-id">Número de identificación</label>
+					<input class="modal-upload-account__input form__input idnumber-input" name="identification" id="input-id" type="text" placeholder="e.g. 111111111"/>
+					<div class="modal-upload-account__identification--error error"></div>
+
+					<label class="form__label telephone-label" for="input-telephone">Teléfono</label>
+					<input class="modal-upload-account__input form__input telephone-input" name="telephone" id="input-telephone" type="text" placeholder="e.g. 3332221111"/>
+					<div class="modal-upload-account__telephone--error error"></div>
+
+					<label class="form__label email-label" for="input-email">Correo electrónico</label>
+					<input class="modal-upload-account__input form__input email-input" name="email" id="input-email" type="text" placeholder="e.g. example@mail.com"/>
+					<div class="modal-upload-account__email--error error"></div>
+
+					<label class="form__label date-label" for="input-date">Fecha de nacimiento</label>
+          <input class="modal-upload-account__input form__input date-input" type="date" name="" id="input-date">
+
+          <label class="form__label github-label" for="input-github">Github</label>
+          <input class="modal-upload-account__input form__input github-input" type="text" name="" id="input-github" placeholder="e.g. https://github.com/user-name">
+
+          <label class="form__label linkedin-label" for="input-linkedin">LinkedIn</label>
+          <input class="modal-upload-account__input form__input linkedin-input" type="text" name="" id="input-linkedin" placeholder="e.g. https://www.linkedin.com/in/user-name/">
+
+					<div class="form__button-container">
+						<button class="modal-upload-account__close-icon cancel" type="button">Cancelar</button>
+						<button class="modal-upload-account__button form__button confirm" type="submit">Confirmar</button>
+					</div>
+				</form>
+      </section>
+    </div>
+  </div>
+  <!-- upload account modal end -->
+
   <script> const api = 'http://localhost:3000/'; </script>
 	<script src="./src/resources/basicFunctionality.js" type="module"></script>
+  <script src="./src/resources/filterProduct.js"></script>
   <script src="https://kit.fontawesome.com/4825aba800.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -343,6 +343,10 @@
   opacity: 0.5;
 }
 
+::selection {
+  background-color: rgba(255, 125, 26, 0.3);
+}
+
 .quantity {
   width: 100%;
   height: 60px;
@@ -1127,6 +1131,253 @@ i {
   color: #d66108;
 }
 
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  background-color: #FF7D1A !important;
+  box-shadow: 10px 12px 21px -11px #FF7D1A !important;
+}
+
+.modal-upload-account {
+  width: 375px;
+  height: 1050px;
+  background-color: #ffffff;
+  padding: 18px 18px;
+  display: grid;
+  grid-template-rows: 50px auto auto;
+}
+.modal-upload-account__background {
+  background-color: hsla(0, 0%, 0%, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 1100px !important;
+  z-index: 3;
+  display: none;
+  justify-items: center;
+  align-content: space-between;
+}
+.modal-upload-account__title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: #d66108;
+}
+.modal-upload-account__profile-picture {
+  width: 100%;
+  height: 250px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px dashed rgba(255, 125, 26, 0.3);
+}
+.modal-upload-account__profile-picture--wrapper {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  display: grid;
+}
+.modal-upload-account__profile-picture--wrapper .wrapper__image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-upload-account__profile-picture--wrapper .wrapper__image-container img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.modal-upload-account__profile-picture--wrapper .wrapper__input-container {
+  width: 100%;
+  height: 100%;
+}
+.modal-upload-account__profile-picture--wrapper .wrapper__input-container label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #d66108;
+  display: block;
+  margin: 15px 0;
+  text-align: center;
+}
+.modal-upload-account__profile-picture--wrapper .wrapper__input-container input {
+  width: 100%;
+  height: 40px;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #D3D3D3;
+}
+.modal-upload-account__profile-picture--wrapper .wrapper__input-container input::placeholder {
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+.modal-upload-account__profile-picture--wrapper .wrapper__input-container input:focus {
+  outline: 1.5px solid #FF7D1A;
+}
+.modal-upload-account__form-section {
+  width: 100%;
+  display: grid;
+}
+.modal-upload-account__form-section .form {
+  width: 100%;
+  padding: 40px 15px;
+  justify-self: center;
+}
+.modal-upload-account__form-section .form .form__label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+  color: #d66108;
+}
+.modal-upload-account__form-section .form .form__input {
+  width: 100%;
+  height: 40px;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #D3D3D3;
+}
+.modal-upload-account__form-section .form .form__input::placeholder {
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+.modal-upload-account__form-section .form .form__input:focus {
+  outline: 1.5px solid #FF7D1A;
+}
+.modal-upload-account__form-section .form__button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-upload-account__form-section .form__button-container button {
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: #FF7D1A;
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+@media (min-width: 1115px) {
+  .modal-upload-account__form-section .form__button-container button {
+    width: 190px;
+  }
+}
+.modal-upload-account__form-section .form__button-container button:nth-child(1) {
+  background-color: rgba(243, 189, 147, 0.2666666667);
+}
+.modal-upload-account__form-section .form__button-container button:nth-child(1):hover {
+  background-color: hsl(0, 100%, 66%);
+}
+@media (min-width: 1115px) {
+  .modal-upload-account {
+    width: 1115px;
+    height: 700px;
+    position: relative;
+    margin-top: 100px;
+    border-radius: 20px;
+    display: grid;
+    place-content: center;
+    grid-template-columns: 400px auto;
+    grid-template-areas: "title title" "image-container form-container" "image-container form-container";
+  }
+  .modal-upload-account__background {
+    height: auto;
+    overflow-x: hidden;
+  }
+  .modal-upload-account__title {
+    grid-area: title;
+    font-size: 3.4rem;
+    letter-spacing: 2px;
+  }
+  .modal-upload-account__profile-picture {
+    grid-area: image-container;
+    width: 350px;
+    justify-self: center;
+    margin-top: 40px;
+  }
+  .modal-upload-account__form-section {
+    grid-area: form-container;
+  }
+  .modal-upload-account__form-section .form {
+    display: grid;
+    grid-template: "name-label id-label" 20px "name-input id-input" 50px "telephone-label email-label" 20px "telephone-input email-input" 50px "github-label linkedin-label" 20px "github-input linkedin-input" 50px "date-label ." 20px "date-input ." 50px "buttons ." 40px/1fr 1fr;
+    gap: 10px;
+  }
+  .modal-upload-account__form-section .name-label {
+    grid-area: name-label;
+  }
+  .modal-upload-account__form-section .name-input {
+    grid-area: name-input;
+  }
+  .modal-upload-account__form-section .idnumber-label {
+    grid-area: id-label;
+  }
+  .modal-upload-account__form-section .idnumber-input {
+    grid-area: id-input;
+  }
+  .modal-upload-account__form-section .telephone-label {
+    grid-area: telephone-label;
+  }
+  .modal-upload-account__form-section .telephone-input {
+    grid-area: telephone-input;
+  }
+  .modal-upload-account__form-section .email-label {
+    grid-area: email-label;
+  }
+  .modal-upload-account__form-section .email-input {
+    grid-area: email-input;
+  }
+  .modal-upload-account__form-section .date-label {
+    grid-area: date-label;
+  }
+  .modal-upload-account__form-section .date-input {
+    grid-area: date-input;
+  }
+  .modal-upload-account__form-section .github-label {
+    grid-area: github-label;
+  }
+  .modal-upload-account__form-section .github-input {
+    grid-area: github-input;
+  }
+  .modal-upload-account__form-section .linkedin-label {
+    grid-area: linkedin-label;
+  }
+  .modal-upload-account__form-section .linkedin-input {
+    grid-area: linkedin-input;
+  }
+  .modal-upload-account__form-section .form__button-container {
+    position: absolute;
+    width: 100%;
+    grid-area: buttons;
+    display: flex;
+    gap: 10px;
+  }
+  .modal-upload-account__form-section .form__button-container .confirm {
+    position: absolute;
+    right: 620px;
+    bottom: 20px;
+  }
+  .modal-upload-account__form-section .form__button-container .cancel {
+    position: absolute;
+    right: 520px;
+    bottom: -140px;
+  }
+}
+
+input[type=date] {
+  color: #68707d;
+  font-size: 1.7rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1233,6 +1484,12 @@ a {
 
 .form-wrapper__telephone--error {
   min-height: 1px;
+}
+
+/*# sourceMappingURL=styles.css.map */
+::selection {
+  background-color: rgba(255, 125, 26, 0.3);
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=styles.css.map */

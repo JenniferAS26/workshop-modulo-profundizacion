@@ -95,6 +95,6 @@
   }
 }
 
-// .class-text {
-//   width: 100%;
-// }
+::selection {
+  background-color: rgba($color: v.$primary-color, $alpha: 0.3);
+}

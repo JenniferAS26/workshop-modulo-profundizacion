@@ -1,0 +1,180 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.modal-upload-account {
+  width: 375px;
+  height: 1050px;
+  background-color: #ffffff;
+  padding: 18px 18px;
+  // position: relative;
+  display: grid;
+  grid-template-rows: 50px auto auto;
+  &__background {
+    @include m.backgroundModal;
+    height: 1100px !important;
+    z-index: 3;
+    display: none;
+    justify-items: center;
+    align-content: space-between;  
+  }
+  &__title {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    color: v.$secondary-text-color;
+  }
+  &__profile-picture {
+    width: 100%;
+    height: 250px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px dashed rgba($color: v.$primary-color, $alpha: 0.3);
+    &--wrapper {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+      display: grid;
+      .wrapper__image-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 120px;
+          height: 120px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+      .wrapper__input-container {
+        width: 100%;
+        height: 100%;
+        label {
+          font-size: 1.2rem;
+          font-weight: v.$semibold-weight;
+          color: v.$secondary-text-color;
+          display: block;
+          margin: 15px 0;
+          text-align: center
+        }
+        input {
+          @include m.formInputStyle;
+        }
+      }
+    }
+  }
+  &__form-section{
+    width: 100%;
+    display: grid;
+    .form {
+      width: 100%;
+      // display: none;
+      padding: 40px 15px;
+      justify-self: center;
+      .form__label {
+        @include m.formLabelStyle;
+      }
+      .form__input {
+        @include m.formInputStyle;
+      }
+      &__button-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        button {
+          @include m.buttonStyleForm;
+          // width: 110px !important;
+        }
+        button:nth-child(1) {
+          background-color: #f3bd9344;
+          &:hover {
+            background-color: v.$error-color;
+          }
+        }
+      }  
+    }
+  }
+  @media (min-width: 1115px) {
+    width: 1115px;
+    height: 700px;
+    position: relative;
+    margin-top: 100px;
+    border-radius: 20px;
+    display: grid;
+    place-content: center;
+    grid-template-columns: 400px auto;
+    grid-template-areas: "title title"
+    "image-container form-container"
+    "image-container form-container";
+    &__background {
+      height: auto; 
+      overflow-x: hidden;
+    }
+    &__title {
+      grid-area: title;
+      font-size: 3.4rem;
+      letter-spacing: 2px;
+    }
+    &__profile-picture {
+      grid-area: image-container;
+      width: 350px;
+      justify-self: center;
+      margin-top: 40px;
+    }
+    &__form-section {
+      grid-area: form-container;
+      .form {
+        display: grid;
+        grid-template: "name-label id-label" 20px 
+          "name-input id-input" 50px 
+          "telephone-label email-label" 20px 
+          "telephone-input email-input" 50px 
+          "github-label linkedin-label" 20px 
+          "github-input linkedin-input" 50px 
+          "date-label ." 20px
+          "date-input ." 50px 
+          "buttons ." 40px / 1fr 1fr;
+          gap: 10px;
+      }
+      .name-label {grid-area: name-label;}
+      .name-input {grid-area: name-input;}
+      .idnumber-label {grid-area: id-label;}
+      .idnumber-input {grid-area: id-input;}
+      .telephone-label {grid-area: telephone-label;}
+      .telephone-input {grid-area: telephone-input;}
+      .email-label {grid-area: email-label;}
+      .email-input {grid-area: email-input;}
+      .date-label {grid-area: date-label;}
+      .date-input {
+        grid-area: date-input;
+      }
+      .github-label {grid-area: github-label;}
+      .github-input {grid-area: github-input;}
+      .linkedin-label {grid-area: linkedin-label;}
+      .linkedin-input {grid-area: linkedin-input;}
+      .form__button-container {
+        position: absolute;
+        width: 100%;
+        grid-area: buttons;
+        display: flex;
+        gap: 10px;
+        .confirm {
+          position: absolute;
+          right: 620px;
+          bottom: 20px;
+        }
+        .cancel {
+          position: absolute;
+          right: 520px;
+          bottom: -140px;
+        }
+      }
+    }
+  }
+}
+
+input[type=date]{
+  color: v.$primary-text-color;
+  font-size: 1.7rem;
+}

@@ -12,6 +12,7 @@
 @use 'footer';
 @use 'register';
 @use 'accounts';
+@use 'modalUploadAccount';
 
 * {
   margin: 0;
@@ -76,6 +77,7 @@ a {
   margin-top: 25px;
 }
 
-// .class-text {
-//   width: 100%;
-// }
+::selection {
+  background-color: rgba($color: v.$primary-color, $alpha: 0.3);
+  color: #ffffff;
+}
