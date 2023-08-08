@@ -26,7 +26,6 @@ nameInput.addEventListener('input', () => {
   if (nameInput.value === '') {
     showError(nameInput, nameErrorDiv, 'Este campo no puede estar vacio');
   } else {
-    nameCard.textContent = nameInput.value;
     showError(nameInput, nameErrorDiv, '', false);
   } 
 });

@@ -478,7 +478,7 @@
   "userAccounts": [
     {
       "name": "Jennifer Alarcón Serna",
-      "identification": "1088016810",
+      "identification": "109975216",
       "telephone": "3154281024",
       "email": "jalarcon@utp.edu.co",
       "avatar": "https://images.unsplash.com/photo-1691268891144-09cb1cb7eb04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
@@ -489,9 +489,9 @@
     },
     {
       "name": "Camilo Marin",
-      "identification": "",
+      "identification": "1066987456",
       "telephone": "3256987",
-      "email": "",
+      "email": "camilom@email.com",
       "avatar": "https://plus.unsplash.com/premium_photo-1663853120673-630589b43dda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
       "github": "",
       "linkedin": "",
@@ -542,6 +542,28 @@
       "linkedin": "",
       "birthday": "",
       "id": 8
+    },
+    {
+      "name": "Daniela Payan",
+      "identification": "1088014987",
+      "telephone": "3154896523",
+      "email": "danielap@gmail.com",
+      "avatar": "https://images.unsplash.com/photo-1689866500328-e57bcb3f1b52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      "github": "https://github.com/DanielaP",
+      "linkedin": "https://www.linkedin.com/in/daniela15/",
+      "birthday": "1993-05-15",
+      "id": 9
+    },
+    {
+      "name": "Amanda Serna",
+      "identification": "34043947",
+      "telephone": "3155913755",
+      "email": "amandaserna@gmail.com",
+      "id": 11,
+      "avatar": "https://images.unsplash.com/photo-1685208865365-3d028d99eee9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      "github": "https://github.com/amanda",
+      "linkedin": "https://www.linkedin.com/in/amanda55/",
+      "birthday": "1955-01-22"
     }
   ]
 }
