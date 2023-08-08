@@ -162,6 +162,8 @@ const detailSection = async () => {
     // Guardar el carrito actualizado en el Local Storage
     localStorage.setItem("cart", JSON.stringify(cart));
   };
+
+  
   
   // Delete Products Shopping Cart
   const deleteProduct = () => {

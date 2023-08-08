@@ -32,13 +32,25 @@ data.forEach(account => {
   `;
 });
 
-const getAllEditButtons = document.querySelectorAll('.edit')
+// Show/Close Modal Update Account
+const modalUpdateAccount = document.querySelector('.modal-upload-account__background');
+const closeModalButton = document.querySelector('.cancel');
+closeModalButton.addEventListener('click', () => {
+  modalUpdateAccount.style.display = 'none';
+})
+
+const getAllEditButtons = document.querySelectorAll('.edit');
 
 getAllEditButtons.forEach(editButton => 
-  editButton.onclick = () => updateAccount(editButton.parentElement.id))
+  editButton.onclick = () => {
+    updateAccount(editButton.parentElement.id)
+    modalUpdateAccount.style.display = 'grid';
+  });
 
 
-const getAllDeleteButtons = document.querySelectorAll('.delete')
+const getAllDeleteButtons = document.querySelectorAll('.delete');
 
 getAllDeleteButtons.forEach(deleteButton => 
-  deleteButton.onclick = () => deleteAccount(deleteButton.parentElement.id))
+  deleteButton.onclick = () => deleteAccount(deleteButton.parentElement.id));
+
+

@@ -7,6 +7,10 @@ export const deleteAccount = async (userId) => {
         confirmButtonText: 'Yes, delete it!',
         cancelButtonText: 'Cancel',
         reverseButtons: true,
+        "customClass": {
+          button: 'custom-button',
+          htmlContainer: 'custom-container'
+        },
       }).then((result) => {
         if (result.isConfirmed) {
           // User confirmed deletion, you can trigger your logic here
