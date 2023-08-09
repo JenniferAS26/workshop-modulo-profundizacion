@@ -1,4 +1,4 @@
-import { updateInputLastState, validInputReturn } from "../formValidation.js"
+import { updateInputLastState, validInputReturn } from "../formValidations/validateInputsEvents.js"
 
 const emailInput = document.querySelector('input[name="email"]')
 const errorLabelOfEmail = emailInput.nextElementSibling
@@ -14,7 +14,7 @@ emailInput.onkeydown = e => {
 
 emailInput.onkeyup = e => {
     // if tabbed into email input, don't invalidate
-    if (e.key == 'Tab') return
+    if (e.key == 'Tab') return 
 
     // Invalidate input until all requiremets are met
     emailInput.currentState = false

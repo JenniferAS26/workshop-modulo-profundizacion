@@ -21,7 +21,7 @@
         <a href="home.html"><img class="header__logo" src="../assets/images/logo.svg" alt="logo"></a>
         <nav class="navbar">
           <ul class="navbar__items">
-            <li><a class="navbar__link back-to-home">Collections</a></li>
+            <li><a href="home.html" class="navbar__link back-to-home">Collections</a></li>
             <li><a href="home.html" onclick="filterProduct('Men')" class="navbar__link">Men</a></li>
             <li><a href="home.html" onclick="filterProduct('Women')" class="navbar__link">Women</a></li>
             <li><a href="./accounts.html" class="navbar__link">Account</a></li>
@@ -42,18 +42,21 @@
       <section class="form-wrapper__form-section">
         <form class="form-wrapper__form form">
           <label class="form__label" for="input-name-fw">Nombre Completo</label>
-          <input class="form-wrapper__input form__input" name="name" id="input-name-fw" type="text" placeholder="e.g. John Smith"/>
+          <input class="form-wrapper__input form__input" name="name" 
+          id="input-name-fw" type="text" placeholder="e.g. John Smith" maxlength="30"/>
           <div class="form-wrapper__name--error error"></div>
           <label class="form__label" for="input-id-fw">Número de identificación</label>
-          <input class="form-wrapper__input form__input" name="identification" id="input-id-fw" type="text" placeholder="e.g. 111111111"/>
+          <input class="form-wrapper__input form__input" name="identification" 
+          id="input-id-fw" type="text" placeholder="e.g. 111111111" maxlength="12"/>
           <div class="form-wrapper__identification--error error"></div>
           <label class="form__label" for="input-telephone-fw">Teléfono</label>
           <input class="form-wrapper__input form__input" name="telephone" 
           id="input-telephone-fw" type="text" placeholder="e.g. (333) 222 1111" 
-          style="padding-left: 50px;"  pattern="\([0-9]{3}\) [0-9]{2}-[0-9]{3}" maxlength="14"/>
+          style="padding-left: 50px;" maxlength="14"/>
           <div class="form-wrapper__telephone--error error"></div>
           <label class="form__label" for="input-email-fw">Correo electrónico</label>
-          <input class="form-wrapper__input form__input" name="email" id="input-email-fw" type="text" placeholder="e.g. example@mail.com"/>
+          <input class="form-wrapper__input form__input" name="email" id="input-email-fw" 
+          type="text" placeholder="e.g. example@mail.com" maxlength="35"/>
           <div class="form-wrapper__email--error error"></div>
           <div class="form__button-container register-button-container">
             <button class="form-wrapper__button form__button register-button-container__create" type="submit">Crear cuenta</button>
@@ -80,8 +83,13 @@
   
 	<script> const api = 'http://localhost:3000/'; </script>
 	<script type="module" src="./src/resources/basicFunctionality.js"></script>
-  <script type="module" src="./src/mainScripts/registerAccountForm/registerValidatedForm.js"></script>
+  <script type="module" src="src/mainScripts/registerAccountForm/formValidations/validateSubmitEvent.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	<script src="./src/resources/filterProduct.js"></script>
+	<script src="./src/resources/basicFunctionality.js" type="module"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 </body>
 </html>

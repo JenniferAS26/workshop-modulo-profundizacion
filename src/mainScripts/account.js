@@ -1,6 +1,6 @@
-// import { readAccounts, updateAccount, deleteAccount } from "../services/api.js";
+import { readData, updateData, deleteData } from "../services/api.js";
 
-const data = await readAccounts();
+const data = await readData('users');
 
 let cardsContainer = document.querySelector('.user-cards-container');
 
@@ -47,18 +47,29 @@ const linkedinInput = document.querySelector('.linkedin-input');
 // Show/Close Modal Update Account
 const modalUpdateAccount = document.querySelector('.modal-upload-account__background');
 const closeModalButton = document.querySelector('.cancel');
-closeModalButton.addEventListener('click', () => {
+closeModalButton.onclick = () => {
   modalUpdateAccount.style.display = 'none';
-})
+}
 
 const getAllEditButtons = document.querySelectorAll('.edit');
 
 getAllEditButtons.forEach(editButton => 
-  editButton.onclick = () => {
+  editButton.onclick = async () => {
+    const DB_ID_PRODUCT = editButton.parentElement.id
+
+    const userExistingData = await readData('users', DB_ID_PRODUCT) 
+    delete userExistingData.id
+
+    for (const key in userExistingData) {
+      document.querySelector(`[name="${key}"]`)
+      .value = userExistingData[key]
+    }
+    
     modalUpdateAccount.style.display = 'grid';
-    form.addEventListener('submit', event => {
+    
+    form.onsubmit = async vent => {
       event.preventDefault();
-      console.log(nameInput.value, nameInput.value == '');
+
       const formInputValues = {
         name: nameInput.value,
         identification: idNumberInput.value,
@@ -71,10 +82,43 @@ getAllEditButtons.forEach(editButton =>
       }
       for (const key in formInputValues) {
         if (formInputValues[key]) continue
-        delete formInputValues[key];
+        formInputValues[key] = userExistingData[key]
       }
-      updateAccount(editButton.parentElement.id, formInputValues)
-    })
+
+      const result = await Swal.fire({
+        title: 'Edit Account',
+        text: 'Are you sure you want to edit your account?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, change it!',
+        cancelButtonText: 'Cancel',
+        reverseButtons: true,
+        "customClass": {
+          button: 'custom-button',
+          htmlContainer: 'custom-container'
+        },
+      })
+      if (result.isConfirmed) {
+        // User confirmed deletion, you can trigger your logic here
+        const deleteConfirmed = true;
+        swal({
+          title: "User modified",
+          icon: "./assets/icons/check.png",
+          button: "Great",
+          "customClass": {
+          button: 'custom-button',
+          htmlContainer: 'custom-container'
+          },
+        })
+        // Use 'deleteConfirmed' in your logic to proceed with account deletion
+        updateData('users', DB_ID_PRODUCT, formInputValues)
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // User cancelled deletion
+        const deleteConfirmed = false;
+        // Use 'deleteConfirmed' in your logic to handle cancellation
+        console.log('Account modification cancelled');
+      }
+    }
     
   });
 
@@ -99,9 +143,9 @@ getAllDeleteButtons.forEach(deleteButton =>
     if (result.isConfirmed) {
       // User confirmed deletion, you can trigger your logic here
       const deleteConfirmed = true;
+      
       // Use 'deleteConfirmed' in your logic to proceed with account deletion
-      console.log('Account deletion confirmed');
-      deleteAccount(deleteButton.parentElement.id)
+      deleteData(deleteButton.parentElement.id)
     } else if (result.dismiss === Swal.DismissReason.cancel) {
       // User cancelled deletion
       const deleteConfirmed = false;

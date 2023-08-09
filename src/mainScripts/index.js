@@ -1,4 +1,4 @@
-import { getProducts } from '../services/api.js';
+import { readData } from '../services/api.js';
 
 const getHash = () => {
   const params = new URLSearchParams(location.search);
@@ -8,7 +8,7 @@ let cart = [];
 
 const detailSection = async () => {
   const id = Number.parseInt(getHash(), 10);
-  const data = await getProducts(id);
+  const data = await readData('products', id);
   // Content from api
   const company = document.querySelector('.product-details__company');
   const title = document.querySelector('.product-details__title');
@@ -186,9 +186,9 @@ const detailSection = async () => {
     cartNotification.textContent = lastValue;
     cartNotification.style.display = 'block';
     swal({
-      title: "Se han añadido con éxito los productos al carrito",
+      title: "Added to your cart!",
       icon: "./assets/icons/check.png",
-      button: "Continuar",
+      button: "Great",
       "customClass": {
         button: 'custom-button',
         htmlContainer: 'custom-container'

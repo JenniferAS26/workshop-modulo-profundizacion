@@ -1,14 +1,14 @@
-import { getProducts } from '../services/api.js';
+import { readData } from '../services/api.js';
 
 const homeSection = async () => {
-  const products = await getProducts();
+  const fetchedProducts = await readData('products');
   const homeContainer = document.querySelector('.home-container');
   homeContainer.innerHTML = '';
 
   const shopContainer = document.createElement('div');
   shopContainer.className = 'shop__container grid';
 
-  products.forEach(product => {
+  fetchedProducts.forEach(product => {
     const shopItems = document.createElement('div');
 
     if (product.category == 'Women') {
@@ -23,12 +23,12 @@ const homeSection = async () => {
 
     const shopContent = document.createElement('div');
     shopContent.className = 'shop__content';
-
+    
     const img = document.createElement('img');
     img.src = product.images[0];
     img.alt = product.name;
     img.className = 'shop__img';
-
+  
     const shopPrices = document.createElement('div');
     shopPrices.className = 'shop__prices';
 

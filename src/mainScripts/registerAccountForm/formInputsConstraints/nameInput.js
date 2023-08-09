@@ -1,4 +1,4 @@
-import { updateInputLastState, validInputReturn } from "../formValidation.js"
+import { updateInputLastState, validInputReturn } from "../formValidations/validateInputsEvents.js"
 
 const nameInput = document.querySelector('input[name="name"]')
 const errorLabelOfName = nameInput.nextElementSibling
@@ -11,7 +11,7 @@ nameInput.onkeydown = e => {
     const twoSpaces = e.key == ' ' && nameInput.value.at(-1) == ' ' 
     
     const exceptions = specialKeys
-    || (e.key.match(/[a-zA-Z]/) 
+    || (e.key?.match(/[a-zA-Z]/) 
     && e.key.length == 1)
 
     if (exceptions && !twoSpaces) return 
@@ -19,11 +19,13 @@ nameInput.onkeydown = e => {
 }
 
 nameInput.onkeyup = function(e) {
-    if (e.key.match(/[A-Za-z]/) && e.key.length > 1 
+    if (e.key == undefined) return validInputReturn(nameInput, errorLabelOfName)
+
+    if (e.key?.match(/[A-Za-z]/) && e.key.length > 1 
     && e.key != 'Backspace' && e.key != 'Enter') return
-    
+
     // if empty, reject and change label
-    !nameInput.value.trim() && (e.key.match(/[A-Za-z]/) || e.key == ' ') 
+    !nameInput.value.trim() && (e.key?.match(/[A-Za-z]/) || e.key == ' ') 
     ? errorLabelOfName.innerText = 'Your name cannot be empty'
     : errorLabelOfName.innerText = 'Only letters allowed'
         
@@ -36,7 +38,7 @@ nameInput.onkeyup = function(e) {
     // ALWAYS PAINT RED UNLESS...
     
     // unless it's a letter
-    if (e.key.match(/[A-Za-z]/) && e.key.length == 1
+    if (e.key?.match(/[A-Za-z]/) && e.key.length == 1
     ) return validInputReturn(nameInput, errorLabelOfName)
 
     // unless it's a backspace and still got letters

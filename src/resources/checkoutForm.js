@@ -1,4 +1,4 @@
-import { saveCheckoutinfo } from "../services/api.js";
+import { createData } from "../services/api.js";
 import { showError } from "./auxiliarFuncs.js";
 
 const form = document.querySelector('.modal-checkout__form');
@@ -9,7 +9,7 @@ form.addEventListener('submit', async e => {
   const telephone = document.querySelector('#input-telephone').value;
   const email = document.querySelector('#input-email').value;
   const creditCard = document.querySelector('#input-creditcard').value;
-  saveCheckoutinfo(
+  createData('orders', 
     {
       name, 
       identification,
@@ -114,7 +114,6 @@ numberCreditCardInput.addEventListener('input', e => {
 // Month
 let monthCard = document.querySelector('.card__month');
 let monthInput = document.querySelector('#cardMonth');
-let monthErrorDiv = document.querySelector('.form__input-mm--error');
 
 monthInput.addEventListener('input', () => {
   monthCard.textContent = monthInput.value;
@@ -138,7 +137,6 @@ yearInput.addEventListener('input', () => {
 // CVC 
 let cvcCard = document.querySelector('.card-back__cvc');
 let cvcInput = document.querySelector('#cardCVC');
-let cvcErrorDiv = document.querySelector('.form__input-cvc--error');
 
 cvcInput.addEventListener('input', () => {
   cvcCard.textContent = cvcInput.value;

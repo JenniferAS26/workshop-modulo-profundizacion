@@ -1,4 +1,4 @@
-import { updateInputLastState, validInputReturn } from "../formValidation.js"
+import { updateInputLastState, validInputReturn } from "../formValidations/validateInputsEvents.js"
 import './telephoneInput.js'
 
 const identificationInput = document.querySelector('[name="identification"]')
@@ -10,7 +10,7 @@ numberInputs.forEach(numberInput => {
         // if key == specialKey || letter, allow
         const specialKeys = e.key == 'Backspace' || e.key == '+' || e.key == 'ArrowRight'
         || e.key == 'Control' || e.key == 'Tab' || e.key == 'Enter' || e.key == 'ArrowLeft'
-        const exceptions = specialKeys || e.key.match(/^[0-9]+$/) 
+        const exceptions = specialKeys || e.key?.match(/^[0-9]+$/) 
 
         if (e.ctrlKey || exceptions) return
         e.preventDefault() // else || moreSpaces, block.
@@ -32,9 +32,9 @@ numberInputs.forEach(numberInput => {
         }
 
         // if it's a number, must have 9 digits at least
-        if (numberInput.value.length < 9 && numberInput.value.length > 0) {
-            console.log(numberInput.name)
-            return errorLabelOfNumberInput.innerText = `Your ${numberInput.name} must have 10 numbers at least`
+        const minimumLength = numberInput.name == 'telephone' ? 10 : 7
+        if (numberInput.value.length < minimumLength && numberInput.value.length > 0) {
+            return errorLabelOfNumberInput.innerText = `Your ${numberInput.name} must have ${minimumLength} numbers at least`
         }
 
         // if its a number with 9 or more digits, validate
