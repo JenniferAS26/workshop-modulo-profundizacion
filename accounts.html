@@ -62,8 +62,9 @@
             <img class="current-avatar" src="https://images.unsplash.com/photo-1691308138375-1e887021be52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="dummy image ">
           </figure>
           <div class="wrapper__input-container">
-            <label for="input-url">Copy here the link of you new profile picture</label>
-            <input type="text" placeholder="URL" id="input-url" class="input-image" name="avatar">
+            <label for="input-url">Arrastra aquí tu imagen de perfil o <span>sube una foto</span></label>
+            <!-- <input type="text" placeholder="URL" id="input-url" class="input-image" name="avatar"> -->
+            <input type="file" id="input-url" class="input-image" name="avatar" accept="image/*" value="avatar">
           </div>
         </div>
       </section>

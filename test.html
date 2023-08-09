@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload</title>
+</head>
+<body>
+  <form>
+    <label for="imageUpload">Upload an image:</label>
+    <input type="file" id="imageUpload" name="image" accept="image/png, image/jpeg">
+    <button class="upload" type="button">Upload</button>
+    <!-- <input type="submit" value="Upload"> -->
+  </form>
+</body>
+<script>
+  const form = document.querySelector('form');
+  const submitButton = document.querySelector('.upload');
+  submitButton.addEventListener('click', () => {
+    // e.preventDefault();
+    const inputFile = document.querySelector('#imageUpload').value;
+    console.log(inputFile);
+    const path = inputFile.split('\\');
+    
+    console.log('./'+ path[2]);
+    const img = document.createElement('img');
+    img.src = './'+ path[2];
+    console.log(img);
+    form.appendChild(img)
+  })
+</script>
+</html>

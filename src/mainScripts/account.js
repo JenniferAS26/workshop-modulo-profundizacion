@@ -14,7 +14,7 @@ data.forEach(account => {
       <div class="user-cards-container__card--image-container">
         <div class="external-wrapper">
           <div class="inner-wrapper">
-            <img class="user-cards-container__card--image" src=${avatar} alt="avatar image">
+            <img class="user-cards-container__card--image" src="${avatar}" alt="avatar image">
           </div>
         </div>
       </div>
@@ -45,7 +45,6 @@ const githubInput = document.querySelector('.github-input');
 const linkedinInput = document.querySelector('.linkedin-input');
 const currentAvatar = document.querySelector('.current-avatar');
 
-
 // Show/Close Modal Update Account
 const modalUpdateAccount = document.querySelector('.modal-upload-account__background');
 const closeModalButton = document.querySelector('.cancel');
@@ -64,11 +63,11 @@ getAllEditButtons.forEach(editButton =>
     delete userExistingData.id
 
     currentAvatar.src = userExistingData.avatar;
-
-    for (const key in userExistingData) {
-      document.querySelector(`[name="${key}"]`)
-      .value = userExistingData[key]
-    }
+    
+    // for (const key in userExistingData) {
+    //   document.querySelector(`[name="${key}"]`)
+    //   .value = userExistingData[key]
+    // }
     
     modalUpdateAccount.style.display = 'grid';
     
@@ -80,7 +79,7 @@ getAllEditButtons.forEach(editButton =>
         identification: idNumberInput.value,
         telephone: telephoneInput.value,
         email: emailInput.value,
-        avatar: avatar.value,
+        avatar: './' + avatar.value.split('\\')[2],
         github: githubInput.value,
         linkedin: linkedinInput.value,
         birthday: dateInput.value
@@ -127,7 +126,6 @@ getAllEditButtons.forEach(editButton =>
     }
     
   });
-
 
 const getAllDeleteButtons = document.querySelectorAll('.delete');
 

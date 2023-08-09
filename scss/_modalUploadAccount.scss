@@ -32,6 +32,7 @@
     &--wrapper {
       width: 100%;
       height: 100%;
+      position: relative;
       margin-bottom: 10px;
       display: grid;
       .wrapper__image-container {
@@ -51,15 +52,25 @@
         width: 100%;
         height: 100%;
         label {
-          font-size: 1.2rem;
-          font-weight: v.$semibold-weight;
-          color: v.$secondary-text-color;
+          font-size: 1.4rem;
+          font-weight: v.$medium-weight;
+          color: v.$primary-color;
           display: block;
           margin: 15px 0;
-          text-align: center
+          text-align: center;
+          span {
+            font-weight: v.$semibold-weight;
+            color: v.$secondary-text-color;
+          }
         }
-        input {
-          @include m.formInputStyle;
+        .input-image {
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 0;
+          cursor: pointer;
+          height: 100%;
+          width: 100%;
         }
       }
     }
