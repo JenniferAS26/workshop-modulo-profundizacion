@@ -20,7 +20,7 @@ formHTMLElement.onsubmit = async event => {
       const formValuesToRegister = Object.fromEntries(formDataCatcher)
       
       // Default avatar [hehe xd]
-      formValuesToRegister.avatar = DEFAULT_AVATAR
+      formValuesToRegister.avatar = DEFAULT_AVATAR;
 
       // Post brand new user on database
       (await import ('../../../services/api.js'))
