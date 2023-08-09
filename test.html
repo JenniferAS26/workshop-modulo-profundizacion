@@ -3,6 +3,21 @@
 <head>
     <title>Image Upload</title>
 </head>
+<style>
+  form {
+    width: 600px;
+    height: auto;
+    display: grid;
+    place-items: center;
+  }
+  .image {
+    margin-top: 50px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+</style>
 <body>
   <form>
     <label for="imageUpload">Upload an image:</label>
@@ -11,20 +26,37 @@
     <!-- <input type="submit" value="Upload"> -->
   </form>
 </body>
-<script>
+<script type="module">
+  import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
+
+  const url = 'https://api.cloudinary.com/v1_1/dkd5jyxby/image/upload';
+  
+  
+  const postUrl = async (endpoint, file) => {
+    const body = {
+      file,
+      api_key: 357824561481388,
+      upload_preset: 't4dskobq'
+    }
+    const headers = {
+      "Content-Type": "multipart/form-data",
+    }
+    const response = await axios.post(endpoint, body, { headers });
+    return response.data.url
+  }
+
   const form = document.querySelector('form');
   const submitButton = document.querySelector('.upload');
-  submitButton.addEventListener('click', () => {
-    // e.preventDefault();
-    const inputFile = document.querySelector('#imageUpload').value;
-    console.log(inputFile);
-    const path = inputFile.split('\\');
-    
-    console.log('./'+ path[2]);
+
+  submitButton.addEventListener('click', async () => {
+    const fileInput = document.querySelector('#imageUpload');
+    const file =  fileInput.files[0];
     const img = document.createElement('img');
-    img.src = './'+ path[2];
+    img.classList = 'image';
+    img.src = await postUrl(url, file);
     console.log(img);
-    form.appendChild(img)
+    form.appendChild(img);
+    
   })
 </script>
 </html>

@@ -38,4 +38,17 @@ function handleError(error) {
   return console.log('Error during the HTTP REQUEST:', error)
 }
 
-export { createData, readData, updateData, deleteData }
+const saveImage = async (endpoint, file) => {
+  const body = {
+    file,
+    api_key: 357824561481388,
+    upload_preset: 't4dskobq'
+  }
+  const headers = {
+    "Content-Type": "multipart/form-data",
+  }
+  const response = await axios.post(endpoint, body, { headers });
+  return response.data.url
+}
+
+export { createData, readData, updateData, deleteData, saveImage  }

@@ -1,6 +1,8 @@
-import { readData, updateData, deleteData } from "../services/api.js";
+import { readData, updateData, deleteData, saveImage } from "../services/api.js";
 
 const data = await readData('users');
+
+const couldinaryUrl = 'https://api.cloudinary.com/v1_1/dkd5jyxby/image/upload';
 
 let cardsContainer = document.querySelector('.user-cards-container');
 
@@ -74,12 +76,15 @@ getAllEditButtons.forEach(editButton =>
     form.onsubmit = async event => {
       event.preventDefault();
 
+      const file = avatar.files[0];
+      const imageUrl = await saveImage(couldinaryUrl, file);
+
       const formInputValues = {
         name: nameInput.value,
         identification: idNumberInput.value,
         telephone: telephoneInput.value,
         email: emailInput.value,
-        avatar: './' + avatar.value.split('\\')[2],
+        avatar: imageUrl,
         github: githubInput.value,
         linkedin: linkedinInput.value,
         birthday: dateInput.value
