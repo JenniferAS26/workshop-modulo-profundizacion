@@ -1,6 +1,6 @@
-import './formInputs/nameInput.js'
-import './formInputs/emailInput.js'
-import './formInputs/id_phone_numberInputs.js'
+import './formInputsConstraints/nameInput.js'
+import './formInputsConstraints/emailInput.js'
+import './formInputsConstraints/id_phone_numberInputs.js'
 
 const formHTMLElement = document.querySelector('form')
 
@@ -11,10 +11,20 @@ formHTMLElement.onsubmit = e => {
     const formInputsElements = [...formHTMLElement.querySelectorAll('input')]
     const allInputsAreValid = formInputsElements.every(formInput => formInput.currentState)
 
-    if (allInputsAreValid) console.log('miau!!!') // => createAccount()
+    if (allInputsAreValid) return console.log('miau!!!') // => createAccount()
+    
+    // emulate focus and blur events to trigger error styles
+    formHTMLElement.querySelectorAll('input')
+    .forEach(input => {
+      input.focus()
+      input.blur()
+    })
+
+    // ux: select first invalid form input to fill out field 
+    formHTMLElement.querySelector('.invalidFormInput').focus()
 }
-import { createAccount } from "../../services/api.js";
-import { showError } from "../../resources/auxiliarFuncs.js";
+// import { createAccount } from "../../services/api.js";
+// import { showError } from "../../resources/auxiliarFuncs.js";
 
 // const Form = document.querySelector('form')
 

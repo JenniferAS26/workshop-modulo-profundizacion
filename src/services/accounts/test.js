@@ -1,5 +1,5 @@
 const URL = 'https://64d1bacbf8d60b174360d1ce.mockapi.io/users/'
-import db from '../../data/db copy.json' assert { type: "json" }
+// import db from '../../data/db users.json' assert { type: "json" }
 
 const headers = {'content-type' : 'application/json'}
 
@@ -11,10 +11,13 @@ async function deleteData (id) {
     await axios.delete(URL + id)
 }
 
+async function patchData (id, body) {
+    await axios.put(URL + id, body)
+}
 
-// postDb(JSON.stringify(db))
 
 
+// postDb({'hola' : 'hola'}) 
 
 
 // const postData = {
