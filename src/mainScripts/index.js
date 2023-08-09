@@ -7,8 +7,13 @@ const getHash = () => {
 let cart = [];
 
 const detailSection = async () => {
+  // Fetch and render chosen product
   const id = Number.parseInt(getHash(), 10);
   const data = await readData('products', id);
+
+  // if chosen product is null, return home
+  if (!data) window.location = 'home.html'
+
   // Content from api
   const company = document.querySelector('.product-details__company');
   const title = document.querySelector('.product-details__title');

@@ -101,7 +101,7 @@ getAllEditButtons.forEach(editButton =>
       if (result.isConfirmed) {
         // User confirmed deletion, you can trigger your logic here
         const deleteConfirmed = true;
-        swal({
+        Swal.fire({
           title: "User modified",
           icon: "./assets/icons/check.png",
           button: "Great",
@@ -111,7 +111,9 @@ getAllEditButtons.forEach(editButton =>
           },
         })
         // Use 'deleteConfirmed' in your logic to proceed with account deletion
+
         updateData('users', DB_ID_PRODUCT, formInputValues)
+        window.location.rel
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         // User cancelled deletion
         const deleteConfirmed = false;
