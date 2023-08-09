@@ -1337,6 +1337,9 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   margin-bottom: 20px;
   border-radius: 8px;
   border: 1px solid #D3D3D3;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 .modal-upload-account__form-section .form .form__input::placeholder {
   font-size: 1.7rem;
@@ -1405,7 +1408,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   }
   .modal-upload-account__form-section .form {
     display: grid;
-    grid-template: "name-label id-label" 20px "name-input id-input" 50px "telephone-label email-label" 20px "telephone-input email-input" 50px "github-label linkedin-label" 20px "github-input linkedin-input" 50px "date-label ." 20px "date-input ." 50px "buttons ." 40px/1fr 1fr;
+    grid-template: "name-label id-label" 10px "name-input id-input" 50px "name-error id-error" 1px "telephone-label email-label" 10px "telephone-input email-input" 50px "telephone-error email-error" 1px "github-label linkedin-label" 10px "github-input linkedin-input" 50px "github-error linkedin-error" 1px "date-label ." 10px "date-input ." 50px "date-error ." 1px "buttons ." 40px/1fr 1fr;
     gap: 10px;
   }
   .modal-upload-account__form-section .name-label {
@@ -1414,11 +1417,17 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   .modal-upload-account__form-section .name-input {
     grid-area: name-input;
   }
+  .modal-upload-account__form-section .__name--error {
+    grid-area: name-error;
+  }
   .modal-upload-account__form-section .idnumber-label {
     grid-area: id-label;
   }
   .modal-upload-account__form-section .idnumber-input {
     grid-area: id-input;
+  }
+  .modal-upload-account__form-section .__identification--error {
+    grid-area: id-error;
   }
   .modal-upload-account__form-section .telephone-label {
     grid-area: telephone-label;
@@ -1426,11 +1435,17 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   .modal-upload-account__form-section .telephone-input {
     grid-area: telephone-input;
   }
+  .modal-upload-account__form-section .__telephone--error {
+    grid-area: telephone-error;
+  }
   .modal-upload-account__form-section .email-label {
     grid-area: email-label;
   }
   .modal-upload-account__form-section .email-input {
     grid-area: email-input;
+  }
+  .modal-upload-account__form-section .__email--error {
+    grid-area: email-error;
   }
   .modal-upload-account__form-section .date-label {
     grid-area: date-label;
@@ -1438,17 +1453,26 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   .modal-upload-account__form-section .date-input {
     grid-area: date-input;
   }
+  .modal-upload-account__form-section .__birthday--error {
+    grid-area: date-error;
+  }
   .modal-upload-account__form-section .github-label {
     grid-area: github-label;
   }
   .modal-upload-account__form-section .github-input {
     grid-area: github-input;
   }
+  .modal-upload-account__form-section .__github--error {
+    grid-area: github-error;
+  }
   .modal-upload-account__form-section .linkedin-label {
     grid-area: linkedin-label;
   }
   .modal-upload-account__form-section .linkedin-input {
     grid-area: linkedin-input;
+  }
+  .modal-upload-account__form-section .__linkedin--error {
+    grid-area: linkedin-error;
   }
   .modal-upload-account__form-section .form__button-container {
     position: absolute;

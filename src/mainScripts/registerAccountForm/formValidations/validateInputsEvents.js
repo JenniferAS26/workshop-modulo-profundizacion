@@ -1,6 +1,7 @@
+// ON BLUR EVENT
 document.querySelectorAll('input').forEach(formInput => {
   // Remove unnecesary class style attached to form inputs
-  formInput.classList.remove('form-wrapper__input')
+  formInput.classList?.remove('form-wrapper__input')
   
   // when blur any form input, change color to blue if valid
   formInput.onblur = function() {

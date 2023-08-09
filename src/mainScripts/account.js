@@ -1,4 +1,7 @@
 import { readData, updateData, deleteData } from "../services/api.js";
+import './registerAccountForm/formInputsConstraints/nameInput.js'
+// import './registerAccountForm/formInputsConstraints/id_phone_numberInputs.js'
+import './registerAccountForm/formInputsConstraints/emailInput.js'
 
 const data = await readData('users');
 
