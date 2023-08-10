@@ -82,7 +82,6 @@ getAllEditButtons.forEach(editButton =>
       event.preventDefault();
 
       const file = avatar.files[0];
-      console.log(file);
       const imageUrl = await saveImage(cloudinaryUrl, file);
 
       const formInputValues = {
