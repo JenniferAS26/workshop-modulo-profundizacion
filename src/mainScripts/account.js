@@ -1,7 +1,9 @@
 import { readData, updateData, deleteData } from "../services/api.js";
 import './registerAccountForm/formInputsConstraints/nameInput.js'
-// import './registerAccountForm/formInputsConstraints/id_phone_numberInputs.js'
+import './registerAccountForm/formInputsConstraints/id_phone_numberInputs.js'
 import './registerAccountForm/formInputsConstraints/emailInput.js'
+import './registerAccountForm/formInputsConstraints/websiteInput.js'
+import './registerAccountForm/formInputsConstraints/dateInput.js'
 
 const data = await readData('users');
 
@@ -101,30 +103,21 @@ getAllEditButtons.forEach(editButton =>
           htmlContainer: 'custom-container'
         },
       })
-      if (result.isConfirmed) {
-        // User confirmed deletion, you can trigger your logic here
-        const deleteConfirmed = true;
-        Swal.fire({
-          title: "User modified",
-          icon: "./assets/icons/check.png",
-          button: "Great",
-          "customClass": {
-          button: 'custom-button',
-          htmlContainer: 'custom-container'
-          },
-        })
-        // Use 'deleteConfirmed' in your logic to proceed with account deletion
+      if (!result.isConfirmed) return 
 
-        updateData('users', DB_ID_PRODUCT, formInputValues)
-        window.location.rel
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
-        // User cancelled deletion
-        const deleteConfirmed = false;
-        // Use 'deleteConfirmed' in your logic to handle cancellation
-        console.log('Account modification cancelled');
-      }
-    }
-    
+      // User confirmed deletion, you can trigger your logic here
+      Swal.fire({
+        title: "User modified",
+        icon: "./assets/icons/check.png",
+        button: "Great",
+        "customClass": {
+        button: 'custom-button',
+        htmlContainer: 'custom-container'
+        },
+      })
+
+      updateData('users', DB_ID_PRODUCT, formInputValues)
+    } 
   });
 
 

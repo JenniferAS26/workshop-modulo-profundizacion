@@ -21,7 +21,7 @@ const verifyFilled = (divInput, divError) => {
 
 export { showError, verifyFilled };
 
-// Confirmar button
+// Confirm button
 // let confirmButton = document.querySelector('.modal-checkout__button');
 // confirmButton.addEventListener('click', e => {
 //   e.preventDefault();
