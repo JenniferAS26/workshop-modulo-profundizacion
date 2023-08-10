@@ -1376,6 +1376,9 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 .modal-upload-account__form-section .form__button-container button:nth-child(1):hover {
   background-color: hsl(0, 100%, 66%);
 }
+.modal-upload-account__form-section .form .__telephone--error {
+  min-height: 1px;
+}
 @media (min-width: 1115px) {
   .modal-upload-account {
     width: 1115px;
@@ -1483,12 +1486,12 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   }
   .modal-upload-account__form-section .form__button-container .confirm {
     position: absolute;
-    right: 620px;
-    bottom: 20px;
+    right: 570px;
+    bottom: 30px;
   }
   .modal-upload-account__form-section .form__button-container .cancel {
     position: absolute;
-    right: 520px;
+    right: 480px;
     bottom: -140px;
   }
 }
