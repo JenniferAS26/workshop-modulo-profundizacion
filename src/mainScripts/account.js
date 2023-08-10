@@ -151,5 +151,3 @@ getAllDeleteButtons.forEach(deleteButton =>
     })
     window.location = 'accounts.html'
   });
-
-

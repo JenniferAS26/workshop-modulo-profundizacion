@@ -1501,9 +1501,8 @@ input[type=date] {
   font-size: 1.7rem;
 }
 
-.iti__flag, .iti__arrow {
-  position: relative;
-  top: 5px;
+.modal-upload-account .iti__flag-container {
+  height: 40px;
 }
 
 * {

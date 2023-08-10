@@ -1,5 +1,6 @@
 // json db hosted on mockapi.io free cloud-based API REST 
 const apiURL = 'https://64d1bacbf8d60b174360d1ce.mockapi.io/' 
+const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dkd5jyxby/image/upload';
 
 const createData = async (endPoint, body) => {
   if (endPoint == 'orders') return await axios
@@ -38,7 +39,7 @@ function handleError(error) {
   return console.log('Error during the HTTP REQUEST:', error)
 }
 
-const saveImage = async (endpoint, file) => {
+const saveImage = async file => {
   const body = {
     file,
     api_key: 357824561481388,
@@ -47,7 +48,7 @@ const saveImage = async (endpoint, file) => {
   const headers = {
     "Content-Type": "multipart/form-data",
   }
-  const response = await axios.post(endpoint, body, { headers });
+  const response = await axios.post(CLOUDINARY_URL, body, { headers });
   return response.data.url
 }
 
