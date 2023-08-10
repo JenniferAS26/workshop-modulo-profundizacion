@@ -48,6 +48,7 @@ const saveImage = async (endpoint, file) => {
     "Content-Type": "multipart/form-data",
   }
   const response = await axios.post(endpoint, body, { headers });
+  console.log(response.data);
   return response.data.url
 }
 
