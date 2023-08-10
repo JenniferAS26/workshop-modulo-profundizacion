@@ -43,6 +43,8 @@ const emailInput = document.querySelector('.email-input');
 const dateInput = document.querySelector('.date-input');
 const githubInput = document.querySelector('.github-input');
 const linkedinInput = document.querySelector('.linkedin-input');
+const currentAvatar = document.querySelector('.current-avatar');
+
 
 // Show/Close Modal Update Account
 const modalUpdateAccount = document.querySelector('.modal-upload-account__background');
@@ -55,10 +57,13 @@ const getAllEditButtons = document.querySelectorAll('.edit');
 
 getAllEditButtons.forEach(editButton => 
   editButton.onclick = async () => {
+
     const DB_ID_PRODUCT = editButton.parentElement.id
 
     const userExistingData = await readData('users', DB_ID_PRODUCT) 
     delete userExistingData.id
+
+    currentAvatar.src = userExistingData.avatar;
 
     for (const key in userExistingData) {
       document.querySelector(`[name="${key}"]`)
@@ -67,7 +72,7 @@ getAllEditButtons.forEach(editButton =>
     
     modalUpdateAccount.style.display = 'grid';
     
-    form.onsubmit = async vent => {
+    form.onsubmit = async event => {
       event.preventDefault();
 
       const formInputValues = {
@@ -101,9 +106,10 @@ getAllEditButtons.forEach(editButton =>
       if (result.isConfirmed) {
         // User confirmed deletion, you can trigger your logic here
         const deleteConfirmed = true;
-        swal({
+        await updateData('users', DB_ID_PRODUCT, formInputValues)
+        await Swal.fire({
           title: "User modified",
-          icon: "./assets/icons/check.png",
+          icon: "success",
           button: "Great",
           "customClass": {
           button: 'custom-button',
@@ -111,7 +117,7 @@ getAllEditButtons.forEach(editButton =>
           },
         })
         // Use 'deleteConfirmed' in your logic to proceed with account deletion
-        updateData('users', DB_ID_PRODUCT, formInputValues)
+        window.location.reload()
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         // User cancelled deletion
         const deleteConfirmed = false;
@@ -145,14 +151,23 @@ getAllDeleteButtons.forEach(deleteButton =>
       const deleteConfirmed = true;
       
       // Use 'deleteConfirmed' in your logic to proceed with account deletion
-      deleteData(deleteButton.parentElement.id)
+      await deleteData('users', deleteButton.parentElement.id)
+      await Swal.fire({
+        title: "User deleted",
+        icon: "success",
+        button: "Great",
+        "customClass": {
+        button: 'custom-button',
+        htmlContainer: 'custom-container'
+        },
+      })
+      window.location = 'accounts.html'
     } else if (result.dismiss === Swal.DismissReason.cancel) {
       // User cancelled deletion
       const deleteConfirmed = false;
       // Use 'deleteConfirmed' in your logic to handle cancellation
       console.log('Account deletion cancelled');
     }
-    
   });
 
 

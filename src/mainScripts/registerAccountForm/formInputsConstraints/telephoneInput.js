@@ -3,8 +3,8 @@ const telephoneInputField = document.querySelector('[name="telephone"]')
 // intl-tel-input twilio's plugin initialization 
 const telephoneInput = window.intlTelInput(telephoneInputField, {
     preferredCountries: ['co', 'ar', 'mx', 'us', 'gb'],
-    initialCountry: 'auto',
-    geoIpLookup: getIp,
+    initialCountry: 'co', //auto
+    // geoIpLookup: getIp,
     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
 })
 

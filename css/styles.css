@@ -1021,6 +1021,7 @@
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
   }
   .form-wrapper__image-container {
     background-image: url("../assets/frames/imageRegister2.png");

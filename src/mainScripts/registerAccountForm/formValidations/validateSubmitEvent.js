@@ -47,7 +47,6 @@ formHTMLElement.onsubmit = async event => {
     // emulate focus and blur events to trigger error styles
     formHTMLElement.querySelectorAll('input')
     .forEach(input => {
-      console.log(input.currentState)
       input.focus()
       input.blur()
     })
