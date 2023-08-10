@@ -4,6 +4,7 @@ import './registerAccountForm/formInputsConstraints/id_phone_numberInputs.js'
 import './registerAccountForm/formInputsConstraints/emailInput.js'
 import './registerAccountForm/formInputsConstraints/websiteInput.js'
 import './registerAccountForm/formInputsConstraints/dateInput.js'
+import './registerAccountForm/formInputsConstraints/avatarInput.js'
 
 const data = await readData('users');
 
