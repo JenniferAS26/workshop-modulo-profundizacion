@@ -1,5 +1,5 @@
 // ON BLUR EVENT
-document.querySelectorAll('input').forEach(formInput => {
+document.querySelectorAll('input:not([type="file"])').forEach(formInput => {
   // Remove unnecesary class style attached to form inputs
   formInput.classList?.remove('form-wrapper__input')
   

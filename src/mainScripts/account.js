@@ -72,10 +72,7 @@ getAllEditButtons.forEach(editButton =>
     currentAvatar.src = userExistingData.avatar;
     
     for (const key in userExistingData) {
-      console.log(key)
-      console.log(document.querySelector(`[name="${key}"]`))
-      document.querySelector(`[name="${key}"]`)
-      .value = userExistingData[key]
+      document.querySelector(`[name="${key}"]`).value = userExistingData[key]
     }
     
     modalUpdateAccount.style.display = 'grid';
