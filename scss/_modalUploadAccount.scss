@@ -107,7 +107,10 @@
             background-color: v.$error-color;
           }
         }
-      }  
+      }
+      .__telephone--error {
+        min-height: 1px;
+      }
     }
   }
   @media (min-width: 1115px) {
@@ -189,12 +192,12 @@
         gap: 10px;
         .confirm {
           position: absolute;
-          right: 620px;
-          bottom: 20px;
+          right: 570px;
+          bottom: 30px;
         }
         .cancel {
           position: absolute;
-          right: 520px;
+          right: 480px;;
           bottom: -140px;
         }
       }
