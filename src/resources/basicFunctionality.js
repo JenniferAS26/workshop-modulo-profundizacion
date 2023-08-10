@@ -10,5 +10,3 @@ closeNavbar.addEventListener('click', () => {
   modalNavbar.classList.remove('show');
 });
 
-
-
