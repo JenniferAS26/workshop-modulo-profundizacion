@@ -71,10 +71,12 @@ getAllEditButtons.forEach(editButton =>
 
     currentAvatar.src = userExistingData.avatar;
     
-    // for (const key in userExistingData) {
-    //   document.querySelector(`[name="${key}"]`)
-    //   .value = userExistingData[key]
-    // }
+    for (const key in userExistingData) {
+      console.log(key)
+      console.log(document.querySelector(`[name="${key}"]`))
+      document.querySelector(`[name="${key}"]`)
+      .value = userExistingData[key]
+    }
     
     modalUpdateAccount.style.display = 'grid';
     
@@ -112,7 +114,7 @@ getAllEditButtons.forEach(editButton =>
           htmlContainer: 'custom-container'
         },
       })
-      
+
       if (!result.isConfirmed) return 
 
       // User confirmed deletion, you can trigger your logic here
