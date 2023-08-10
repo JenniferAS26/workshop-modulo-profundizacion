@@ -1501,6 +1501,11 @@ input[type=date] {
   font-size: 1.7rem;
 }
 
+.iti__flag, .iti__arrow {
+  position: relative;
+  top: 5px;
+}
+
 * {
   margin: 0;
   padding: 0;

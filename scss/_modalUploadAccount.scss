@@ -166,24 +166,31 @@
       .name-label {grid-area: name-label;}
       .name-input {grid-area: name-input;}
       .__name--error {grid-area: name-error;}
+
       .idnumber-label {grid-area: id-label;}
       .idnumber-input {grid-area: id-input;}
       .__identification--error {grid-area: id-error;}
+
       .telephone-label {grid-area: telephone-label;}
       .telephone-input {grid-area: telephone-input;}
       .__telephone--error {grid-area: telephone-error;}
+
       .email-label {grid-area: email-label;}
       .email-input {grid-area: email-input;}
       .__email--error {grid-area: email-error;}
+
       .date-label {grid-area: date-label;}
       .date-input {grid-area: date-input;}
       .__birthday--error {grid-area: date-error;}
+
       .github-label {grid-area: github-label;}
       .github-input {grid-area: github-input;}
       .__github--error {grid-area: github-error;}
+
       .linkedin-label {grid-area: linkedin-label;}
       .linkedin-input {grid-area: linkedin-input;}
       .__linkedin--error {grid-area: linkedin-error;}
+      
       .form__button-container {
         position: absolute;
         width: 100%;
@@ -208,4 +215,14 @@
 input[type=date]{
   color: v.$primary-text-color;
   font-size: 1.7rem;
+}
+
+// Daniel Styles
+
+// to fix flag position on modify form
+.iti {
+  &__flag, &__arrow {
+    position: relative;
+    top: 5px;
+  }
 }
