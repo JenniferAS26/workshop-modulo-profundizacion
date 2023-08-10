@@ -4,12 +4,12 @@ import { getAllDeleteButtons } from "./renderAccounts.js";
 
 getAllDeleteButtons.forEach(deleteButton => 
   deleteButton.onclick = async () => {
-    const userRespondAlert = await deleteAccountSweetAlert()
+    const userConfirmDeletion = await deleteAccountSweetAlert()
 
-    if (!userRespondAlert.isConfirmed) return 
+    if (!userConfirmDeletion.isConfirmed) return 
 
     // Use 'deleteConfirmed' in your logic to proceed with account deletion
     await deleteData('users', deleteButton.parentElement.id)
-    const any = await confirmedDeleteAccountSweetAlert()
+    await confirmedDeleteAccountSweetAlert()
     window.location = 'accounts.html'
 });

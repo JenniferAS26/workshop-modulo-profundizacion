@@ -51,7 +51,9 @@ getAllModifyButtons.forEach(editButton =>
         formInputValues[key] = userExistingData[key]
       }
 
-      if (!await modifyAccountSweetAlert().isConfirmed) return 
+      const userConfirmModification = await modifyAccountSweetAlert()
+
+      if (!userConfirmModification.isConfirmed) return 
 
       // User confirmed deletion, you can trigger your logic here
       await updateData('users', DB_ID_PRODUCT, formInputValues)
