@@ -1,4 +1,4 @@
-import { readData, updateData, deleteData } from "../services/api.js";
+import { readData, updateData, deleteData, saveImage } from "../services/api.js";
 import './registerAccountForm/formInputsConstraints/nameInput.js'
 import './registerAccountForm/formInputsConstraints/id_phone_numberInputs.js'
 import './registerAccountForm/formInputsConstraints/emailInput.js'
@@ -6,6 +6,8 @@ import './registerAccountForm/formInputsConstraints/websiteInput.js'
 import './registerAccountForm/formInputsConstraints/dateInput.js'
 
 const data = await readData('users');
+
+const couldinaryUrl = 'https://api.cloudinary.com/v1_1/dkd5jyxby/image/upload';
 
 let cardsContainer = document.querySelector('.user-cards-container');
 
@@ -19,7 +21,7 @@ data.forEach(account => {
       <div class="user-cards-container__card--image-container">
         <div class="external-wrapper">
           <div class="inner-wrapper">
-            <img class="user-cards-container__card--image" src=${avatar} alt="avatar image">
+            <img class="user-cards-container__card--image" src="${avatar}" alt="avatar image">
           </div>
         </div>
       </div>
@@ -48,6 +50,7 @@ const emailInput = document.querySelector('.email-input');
 const dateInput = document.querySelector('.date-input');
 const githubInput = document.querySelector('.github-input');
 const linkedinInput = document.querySelector('.linkedin-input');
+const currentAvatar = document.querySelector('.current-avatar');
 
 // Show/Close Modal Update Account
 const modalUpdateAccount = document.querySelector('.modal-upload-account__background');
@@ -60,27 +63,33 @@ const getAllEditButtons = document.querySelectorAll('.edit');
 
 getAllEditButtons.forEach(editButton => 
   editButton.onclick = async () => {
+
     const DB_ID_PRODUCT = editButton.parentElement.id
 
     const userExistingData = await readData('users', DB_ID_PRODUCT) 
     delete userExistingData.id
 
-    for (const key in userExistingData) {
-      document.querySelector(`[name="${key}"]`)
-      .value = userExistingData[key]
-    }
+    currentAvatar.src = userExistingData.avatar;
+    
+    // for (const key in userExistingData) {
+    //   document.querySelector(`[name="${key}"]`)
+    //   .value = userExistingData[key]
+    // }
     
     modalUpdateAccount.style.display = 'grid';
     
-    form.onsubmit = async vent => {
+    form.onsubmit = async event => {
       event.preventDefault();
+
+      const file = avatar.files[0];
+      const imageUrl = await saveImage(couldinaryUrl, file);
 
       const formInputValues = {
         name: nameInput.value,
         identification: idNumberInput.value,
         telephone: telephoneInput.value,
         email: emailInput.value,
-        avatar: avatar.value,
+        avatar: imageUrl,
         github: githubInput.value,
         linkedin: linkedinInput.value,
         birthday: dateInput.value
@@ -103,23 +112,23 @@ getAllEditButtons.forEach(editButton =>
           htmlContainer: 'custom-container'
         },
       })
+      
       if (!result.isConfirmed) return 
 
       // User confirmed deletion, you can trigger your logic here
-      Swal.fire({
+      await updateData('users', DB_ID_PRODUCT, formInputValues)
+      await Swal.fire({
         title: "User modified",
-        icon: "./assets/icons/check.png",
+        icon: "success",
         button: "Great",
         "customClass": {
         button: 'custom-button',
         htmlContainer: 'custom-container'
         },
       })
-
-      updateData('users', DB_ID_PRODUCT, formInputValues)
-    } 
+      window.location.reload()
+    }
   });
-
 
 const getAllDeleteButtons = document.querySelectorAll('.delete');
 
@@ -138,19 +147,20 @@ getAllDeleteButtons.forEach(deleteButton =>
         htmlContainer: 'custom-container'
       },
     })
-    if (result.isConfirmed) {
-      // User confirmed deletion, you can trigger your logic here
-      const deleteConfirmed = true;
-      
-      // Use 'deleteConfirmed' in your logic to proceed with account deletion
-      deleteData(deleteButton.parentElement.id)
-    } else if (result.dismiss === Swal.DismissReason.cancel) {
-      // User cancelled deletion
-      const deleteConfirmed = false;
-      // Use 'deleteConfirmed' in your logic to handle cancellation
-      console.log('Account deletion cancelled');
-    }
-    
+    if (!result.isConfirmed) return 
+
+    // Use 'deleteConfirmed' in your logic to proceed with account deletion
+    await deleteData('users', deleteButton.parentElement.id)
+    await Swal.fire({
+      title: "User deleted",
+      icon: "success",
+      button: "Great",
+      "customClass": {
+      button: 'custom-button',
+      htmlContainer: 'custom-container'
+      },
+    })
+    window.location = 'accounts.html'
   });
 
 
