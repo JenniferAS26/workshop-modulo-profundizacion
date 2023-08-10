@@ -7,7 +7,7 @@ import './registerAccountForm/formInputsConstraints/dateInput.js'
 
 const data = await readData('users');
 
-const couldinaryUrl = 'https://api.cloudinary.com/v1_1/dkd5jyxby/image/upload';
+const cloudinaryUrl = 'https://api.cloudinary.com/v1_1/dkd5jyxby/image/upload';
 
 let cardsContainer = document.querySelector('.user-cards-container');
 
@@ -81,7 +81,8 @@ getAllEditButtons.forEach(editButton =>
       event.preventDefault();
 
       const file = avatar.files[0];
-      const imageUrl = await saveImage(couldinaryUrl, file);
+      console.log(file);
+      const imageUrl = await saveImage(cloudinaryUrl, file);
 
       const formInputValues = {
         name: nameInput.value,
