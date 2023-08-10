@@ -61,8 +61,6 @@
 
 
 /* Daniel's style classes.  */
-/* These can be deleted if you hate them */
-
 
 /* Invalid Form Inputs  */
 .invalidFormInput {
@@ -102,4 +100,24 @@
   min-height: 1px;
 }
 
-/* These can be deleted if you hate them */
+// Sweetalert custom styles 
+
+.swal-overlay--show-modal .swal-modal {
+  width: 350px !important;
+  height: 250px !important;
+}
+
+.swal-icon--custom {
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.swal-footer {
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.swal-button {
+  box-shadow: none !important;
+}
