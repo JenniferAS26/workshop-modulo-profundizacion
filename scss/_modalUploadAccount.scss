@@ -220,9 +220,8 @@ input[type=date]{
 // Daniel Styles
 
 // to fix flag position on modify form
-.iti {
-  &__flag, &__arrow {
-    position: relative;
-    top: 5px;
+.modal-upload-account .iti {
+  &__flag-container {
+    height: 40px;
   }
 }
