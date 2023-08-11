@@ -29,14 +29,17 @@ const telephoneInputPlugin = document.querySelector('.iti')
 
 
 // DOG WATER HARD CODE. 
-telephoneInputPlugin.oninput = function() {
+// TELEPHONE INPUT FORMAT
+telephoneInputPlugin.oninput = event => {
+    if (event.inputType == 'deleteContentBackward') return
+
     const FIRST_INPUT = 1
     const firstInputIsANumber = /\d/.test(telephoneInputField.value) && telephoneInputField.value.length == FIRST_INPUT
 
     if (firstInputIsANumber) telephoneInputField.value = '(' + telephoneInputField.value
 
     const SECOND_PARENTHESIS = 3
-    const threeNumberHaveBeenWritten = telephoneInputField.value.match(/\d/g).length == SECOND_PARENTHESIS
+    const threeNumberHaveBeenWritten = telephoneInputField.value.match(/\d/g)?.length == SECOND_PARENTHESIS
 
     if (threeNumberHaveBeenWritten) telephoneInputField.value = telephoneInputField.value + ')'
 

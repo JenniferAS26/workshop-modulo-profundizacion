@@ -20,6 +20,13 @@ numberInputs.forEach(numberInput => {
         const errorLabelOfNumberInput = numberInput.nextElementSibling == null 
         ? numberInput.parentElement.nextElementSibling : numberInput.nextElementSibling 
 
+        const isALetter = /[a-zA-Z]/.test(e.key) && e.key.length == 1 
+        if (isALetter) {
+            numberInput.currentState = false
+            updateInputLastState(numberInput)  
+            return errorLabelOfNumberInput.innerText = 'Only numbers allowed'
+        }
+
         // if empty, invalidate and change label
         !numberInput.value.length && (e.key?.match(/^[0-9]+$/) || e.key == 'Backspace')
         ? errorLabelOfNumberInput.innerText = `Your ${numberInput.name} cannot be empty`
@@ -33,7 +40,8 @@ numberInputs.forEach(numberInput => {
 
         // if it's a number, must have 9 digits at least
         const minimumLength = numberInput.name == 'telephone' ? 10 : 7
-        if (numberInput.value.length < minimumLength && numberInput.value.length > 0) {
+
+        if (numberInput.value.match(/\d/g)?.length < minimumLength && numberInput.value.match(/\d/g)?.length > 0) {
             return errorLabelOfNumberInput.innerText = `Your ${numberInput.name} must have ${minimumLength} numbers at least`
         }
 
