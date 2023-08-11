@@ -138,7 +138,54 @@
   }
 }
 
+// Sweetalert custom styles 
+/* delete */
+div:where(.swal2-container) div:where(.swal2-popup) {
+  width: 340px !important;
+  height: 250px !important;
+  border-radius: 15px !important;
+}
+
+div:where(.swal2-container) h2:where(.swal2-title) {
+  padding: 0 !important;
+  font-size: 2.2rem !important;
+  letter-spacing: 1px !important;
+}
+
+div:where(.swal2-container) .swal2-html-container {
+  font-size: 1.4rem !important;
+}
+
+div:where(.swal2-container) div:where(.swal2-actions) {
+  width: 100% !important;
+  column-gap: 10px !important;
+}
+
 div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  font-size: 1.2rem !important;
+  font-weight: v.$semibold-weight !important;
+  letter-spacing: 1px !important;
+  width: 130px !important;
+  height: 30px !important;
   background-color: v.$primary-color !important;
-  box-shadow: 10px 12px 21px -11px #FF7D1A !important;
+  box-shadow: none !important;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel {
+  font-size: 1.2rem !important;
+  font-weight: v.$semibold-weight !important;
+  letter-spacing: 1px !important;
+  width: 110px !important;
+  height: 30px !important;
+  background-color: v.$error-color !important;
+  opacity: 0.2 !important;
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+/* modify */
+div:where(.swal2-container).swal2-center>.swal2-popup {
+  display: grid !important;
+  align-items: center !important;
 }
