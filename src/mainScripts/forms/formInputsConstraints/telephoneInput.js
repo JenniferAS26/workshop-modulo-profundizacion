@@ -1,5 +1,6 @@
 const telephoneInputField = document.querySelector('[name="telephone"]')
 
+
 // intl-tel-input twilio's plugin initialization 
 const telephoneInput = window.intlTelInput(telephoneInputField, {
     preferredCountries: ['co', 'ar', 'mx', 'us', 'gb'],
@@ -21,4 +22,27 @@ function getIp (callback) {
         }
     })
     .then(resp => callback(resp.country))
+}
+
+// 
+const telephoneInputPlugin = document.querySelector('.iti')
+
+
+// DOG WATER HARD CODE. 
+telephoneInputPlugin.oninput = function() {
+    const FIRST_INPUT = 1
+    const firstInputIsANumber = /\d/.test(telephoneInputField.value) && telephoneInputField.value.length == FIRST_INPUT
+
+    if (firstInputIsANumber) telephoneInputField.value = '(' + telephoneInputField.value
+
+    const SECOND_PARENTHESIS = 3
+    const threeNumberHaveBeenWritten = telephoneInputField.value.match(/\d/g).length == SECOND_PARENTHESIS
+
+    if (threeNumberHaveBeenWritten) telephoneInputField.value = telephoneInputField.value + ')'
+
+    const hereGoesASpace = characterPosition => telephoneInputField.value.length == characterPosition
+    const FIFTH_CHARACTER = 5, NINTH_CHARACTER = 9
+
+    if (hereGoesASpace(FIFTH_CHARACTER)) telephoneInputField.value =  telephoneInputField.value + ' '
+    if (hereGoesASpace(NINTH_CHARACTER)) telephoneInputField.value =  telephoneInputField.value + ' '
 }
